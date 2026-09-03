@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audit Art. 50 gratuit — ConformeIA (3 minutes)</title>
+<meta name="description" content="Audit gratuit de conformité à l'article 50 de l'EU AI Act : 14 questions, 3 minutes, plan d'action priorisé. Chatbot, deepfakes, textes d'intérêt public, outils génératifs.">
+<meta property="og:title" content="Audit Art. 50 gratuit — ConformeIA">
+<meta property="og:description" content="14 questions, 3 minutes : votre niveau de conformité + plan d'action priorisé.">
+<meta property="og:locale" content="fr_FR">
+<style>
+  :root{
+    --ink900:#0C1219;--ink800:#141B24;--paper:#F3F1EA;--paper2:#EAE7DC;--ink:#13171C;--muted:#6B7280;
+    --frost:#EDF0F3;--electric:#064BD9;--electric-h:#0438A8;--oficial:#C8102E;--ok:#0E7A3C;--gold:#A97B1F;
+    --line:rgba(19,23,28,.14);--line-dark:rgba(237,240,243,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+  .serif{font-family:Georgia,'Iowan Old Style','Palatino Linotype','Times New Roman',serif}
+  a{color:inherit}
+  .top{background:var(--ink900);color:var(--frost);padding:14px 0;border-bottom:1px solid var(--line-dark)}
+  .top .wrap{max-width:820px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .top .logo{font-weight:800;font-size:1.05rem}
+  .top .logo em{font-style:normal;color:var(--electric)}
+  .top a{color:#AEB9C4;text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+  .top a:hover{color:#fff}
+  main{max-width:820px;margin:0 auto;padding:36px 20px 80px}
+  .kicker{font-size:.72rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--oficial)}
+  h1{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:700;line-height:1.1;margin:10px 0 8px;letter-spacing:-.01em}
+  .intro{color:var(--muted);font-size:1rem;margin-bottom:26px;max-width:640px}
+  .progress{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+  .bar{flex:1;height:8px;border-radius:99px;background:var(--paper2);overflow:hidden}
+  .bar i{display:block;height:100%;width:0%;background:var(--electric);border-radius:99px;transition:width .3s}
+  .progress b{font-size:.85rem;color:var(--muted);white-space:nowrap}
+
+  .qcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;margin-bottom:16px;box-shadow:0 4px 18px rgba(19,23,28,.05)}
+  .qcard .qtag{font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--electric);display:block;margin-bottom:8px}
+  .qcard .q{font-weight:700;font-size:1.05rem;margin-bottom:16px}
+  .choices{display:flex;flex-direction:column;gap:8px}
+  .choice{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer;transition:border-color .15s,background .15s;font-size:.93rem}
+  .choice:hover{border-color:var(--electric)}
+  .choice input{accent-color:var(--electric);width:18px;height:18px;flex-shrink:0}
+  .choice.sel{border-color:var(--electric);background:#F2F6FF}
+
+  .navbtns{display:flex;justify-content:space-between;gap:12px;margin-top:8px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:10px;font-weight:700;font-size:.9rem;text-decoration:none;border:none;cursor:pointer;transition:transform .15s,background .15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:var(--electric);color:#fff}
+  .btn-primary:hover{background:var(--electric-h)}
+  .btn-ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+  .btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+
+  /* Résultats */
+  #resultat{display:none}
+  .score-hero{background:var(--ink900);color:var(--frost);border-radius:18px;padding:32px;margin-bottom:22px;position:relative;overflow:hidden}
+  .score-hero .wm{position:absolute;right:-10px;top:-30px;font-family:Georgia,serif;font-size:10rem;font-weight:700;color:rgba(237,240,243,.04);pointer-events:none}
+  .score-hero .st{font-size:.72rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:#8A96A3}
+  .score-line{display:flex;align-items:center;gap:26px;flex-wrap:wrap;margin:14px 0 6px}
+  .score-num{font-family:Georgia,serif;font-size:4.2rem;font-weight:700;line-height:1}
+  .score-num small{font-size:1.4rem;color:#8A96A3}
+  .score-badge{font-size:1.05rem;font-weight:800;letter-spacing:.1em;padding:10px 18px;border-radius:10px}
+  .sb-URGENT{background:rgba(200,16,46,.18);color:#FF6B7E;border:1px solid rgba(200,16,46,.5)}
+  .sb-ATRAITER{background:rgba(169,123,31,.16);color:#E3B84C;border:1px solid rgba(169,123,31,.5)}
+  .sb-BONNE{background:rgba(14,122,60,.16);color:#5BD08A;border:1px solid rgba(14,122,60,.5)}
+  .score-sub{color:#AEB9C4;font-size:.92rem;max-width:560px}
+
+  .sec-title{font-family:Georgia,serif;font-size:1.5rem;font-weight:700;margin:30px 0 14px}
+  .sit-bars{display:flex;flex-direction:column;gap:12px;margin-bottom:10px}
+  .sit-bar{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .sit-bar .lbl{display:flex;justify-content:space-between;font-weight:700;font-size:.9rem;margin-bottom:8px}
+  .sit-bar .lbl span{color:var(--muted);font-weight:600}
+  .track{height:8px;border-radius:99px;background:var(--paper2);overflow:hidden}
+  .track i{display:block;height:100%;border-radius:99px;transition:width .5s}
+  .t-low{background:var(--oficial)}.t-mid{background:var(--gold)}.t-high{background:var(--ok)}
+  .plan{background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px 0;margin-bottom:26px}
+  .plan .pitem{padding:16px 20px;border-bottom:1px solid var(--line)}
+  .plan .pitem:last-child{border-bottom:none}
+  .plan .pnum{font-family:Georgia,serif;font-weight:700;color:var(--electric);margin-right:8px}
+  .plan .pact{font-size:.92rem}
+  .plan .pact b{display:block;margin-bottom:3px}
+  .plan .plevel{font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:6px;margin-left:8px}
+  .plevel.URGENT{background:#F7E3E6;color:var(--oficial)}
+  .plevel.ATRAITER{background:#F6ECD4;color:var(--gold)}
+  .plevel.BONNE{background:#E9F5EC;color:var(--ok)}
+
+  .cta-pack{background:linear-gradient(160deg,rgba(6,75,217,.1),rgba(6,75,217,.02));border:1px solid rgba(6,75,217,.4);border-radius:16px;padding:26px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .cta-pack h3{font-family:Georgia,serif;font-size:1.4rem;font-weight:700}
+  .cta-pack p{color:var(--muted);font-size:.9rem;margin:6px 0 0;max-width:480px}
+  .print-note{font-size:.78rem;color:var(--muted);margin-top:16px}
+  @media print{
+    .top,.navbtns,.cta-pack,.no-print{display:none!important}
+    body{background:#fff}
+    .qcard{break-inside:avoid;box-shadow:none}
+    #resultat{display:block!important}
+  }
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><div class="logo">Conforme<em>IA</em></div><a href="index.html">← Retour à l'accueil</a></div></div>
+
+<main>
+  <span class="kicker">Audit gratuit · 3 minutes</span>
+  <h1 class="serif">Votre conformité Art. 50, <em style="font-style:normal;color:var(--electric)">mesurée</em>.</h1>
+  <p class="intro">14 questions sur vos usages IA réels. En retour : un score, un statut et un plan d'action priorisé — sans inscription.</p>
+
+  <div class="progress"><div class="bar"><i id="pbar"></i></div><b id="pcount">0 / 14</b></div>
+
+  <form id="auditForm">
+    <div id="questions"></div>
+    <div class="navbtns">
+      <button type="button" class="btn btn-ghost" id="btnPrev" disabled>← Précédent</button>
+      <button type="button" class="btn btn-primary" id="btnNext">Suivant →</button>
+    </div>
+  </form>
+
+  <div id="resultat">
+    <div class="score-hero">
+      <div class="wm serif">§50</div>
+      <div class="st">Résultat de l'audit</div>
+      <div class="score-line">
+        <div class="score-num"><span id="rScore">0</span><small>/100</small></div>
+        <span class="score-badge" id="rBadge">—</span>
+      </div>
+      <p class="score-sub" id="rSub"></p>
+    </div>
+
+    <h2 class="sec-title serif">Situation par situation</h2>
+    <div class="sit-bars" id="rSituations"></div>
+
+    <h2 class="sec-title serif">Votre plan d'action priorisé</h2>
+    <div class="plan" id="rPlan"></div>
+
+    <div class="cta-pack no-print">
+      <div>
+        <h3 class="serif">Transformez ce plan en conformité réelle.</h3>
+        <p>Le pack Art. 50 Express contient les mentions prêtes à l'emploi, la procédure interne et le registre pour chaque point de ce plan — 49 €, livré par email.</p>
+      </div>
+      <a class="btn btn-primary" href="index.html#pricing">Voir le pack →</a>
+    </div>
+    <p class="print-note no-print">💾 Vos réponses sont conservées localement dans ce navigateur. <button type="button" class="btn btn-ghost" style="padding:6px 14px;font-size:.8rem" onclick="window.print()">🖨️ Imprimer / PDF</button></p>
+  </div>
+</main>
+
+<script src="js/audit-engine.js"></script>
+<script>
+(function () {
+  "use strict";
+  var A = window.CONFORMEIA_AUDIT;
+  if (!A) return;
+  var QUESTIONS = A.QUESTIONS;
+  var answers = {};
+  var current = 0;
+
+  /* ----- Rendu des questions (1 par page) ----- */
+  var box = document.getElementById("questions");
+  var pbar = document.getElementById("pbar");
+  var pcount = document.getElementById("pcount");
+  var btnPrev = document.getElementById("btnPrev");
+  var btnNext = document.getElementById("btnNext");
+
+  function answeredCount() {
+    var n = 0;
+    QUESTIONS.forEach(function (q) { if (answers[q.id]) n++; });
+    return n;
+  }
+  function refreshProgress() {
+    var n = answeredCount();
+    pbar.style.width = Math.round((n / QUESTIONS.length) * 100) + "%";
+    pcount.textContent = n + " / " + QUESTIONS.length;
+  }
+
+  function render(idx) {
+    var q = QUESTIONS[idx];
+    box.innerHTML = "";
+    var card = document.createElement("div");
+    card.className = "qcard";
+    var tag = A.SITUATIONS[q.situation].titre;
+    card.innerHTML = '<span class="qtag">' + tag + "</span>" +
+      '<div class="q">' + (idx + 1) + ". " + q.q + "</div>" +
+      '<div class="choices"></div>';
+    var choices = card.querySelector(".choices");
+    q.choix.forEach(function (c) {
+      var label = document.createElement("label");
+      label.className = "choice" + (answers[q.id] === c.v ? " sel" : "");
+      var input = document.createElement("input");
+      input.type = "radio";
+      input.name = "q" + q.id;
+      input.value = c.v;
+      input.checked = answers[q.id] === c.v;
+      label.appendChild(input);
+      label.appendChild(document.createTextNode(c.label));
+      label.addEventListener("click", function () {
+        answers[q.id] = c.v;
+        Array.prototype.forEach.call(choices.querySelectorAll(".choice"), function (el) { el.classList.remove("sel"); });
+        label.classList.add("sel");
+        refreshProgress();
+        btnNext.disabled = false;
+        btnNext.focus();
+      });
+      choices.appendChild(label);
+    });
+    box.appendChild(card);
+    btnPrev.disabled = idx === 0;
+    btnNext.textContent = idx === QUESTIONS.length - 1 ? "Voir mes résultats →" : "Suivant →";
+    btnNext.disabled = !answers[q.id];
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  btnNext.addEventListener("click", function () {
+    if (current < QUESTIONS.length - 1) { current++; render(current); }
+    else showResult();
+  });
+  btnPrev.addEventListener("click", function () {
+    if (current > 0) { current--; render(current); }
+  });
+
+  /* ----- Résultats ----- */
+  function showResult() {
+    var res = A.computeAudit(answers);
+    try { localStorage.setItem("conformeia-audit", JSON.stringify({ answers: answers, resultat: res })); } catch (e) {}
+
+    document.getElementById("auditForm").style.display = "none";
+    document.getElementById("resultat").style.display = "block";
+    document.getElementById("rScore").textContent = res.score;
+
+    var badge = document.getElementById("rBadge");
+    var cls = res.statut === "URGENT" ? "sb-URGENT" : (res.statut === "À TRAITER" ? "sb-ATRAITER" : "sb-BONNE");
+    badge.className = "score-badge " + cls;
+    badge.textContent = res.statut;
+
+    var subs = {
+      "URGENT": "Vos usages IA exposent votre entreprise à une sanction Art. 50. Les actions prioritaires ci-dessous doivent être menées avant toute nouvelle mise en production.",
+      "À TRAITER": "Des obligations sont partiellement couvertes. Formalisez les mentions et documentez la procédure : c'est là que se joue la conformité réelle.",
+      "EN BONNE VOIE": "Bon niveau de conformité documentaire. Verrouillez les preuves (registre, captures) et surveillez l'échéance de marquage du 02/12/2026."
+    };
+    document.getElementById("rSub").textContent = subs[res.statut];
+
+    var sitBox = document.getElementById("rSituations");
+    sitBox.innerHTML = "";
+    Object.keys(A.SITUATIONS).forEach(function (sid) {
+      var s = A.SITUATIONS[sid];
+      var score = res.parSituation[sid];
+      var cls2 = score < 40 ? "t-low" : (score < 75 ? "t-mid" : "t-high");
+      var lvl = score < 40 ? "URGENT" : (score < 75 ? "À TRAITER" : "EN BONNE VOIE");
+      var el = document.createElement("div");
+      el.className = "sit-bar";
+      el.innerHTML = '<div class="lbl"><span>' + s.titre + '</span><span>' + score + '/100</span></div>' +
+        '<div class="track"><i class="' + cls2 + '" style="width:' + score + '%"></i></div>';
+      sitBox.appendChild(el);
+    });
+
+    var planBox = document.getElementById("rPlan");
+    planBox.innerHTML = "";
+    res.plan.forEach(function (p, i) {
+      var lvl = p.score < 40 ? "URGENT" : (p.score < 75 ? "À TRAITER" : "EN BONNE VOIE");
+      var el = document.createElement("div");
+      el.className = "pitem";
+      el.innerHTML = '<div class="pact"><span class="pnum">' + String(i + 1).padStart(2, "0") + '</span><b>' + p.situation + ' <span class="plevel ' + lvl + '">' + lvl + "</span></b>" + p.action + "</div>";
+      planBox.appendChild(el);
+    });
+    refreshProgress();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  /* ----- Reprise d'un audit sauvegardé ----- */
+  try {
+    var saved = JSON.parse(localStorage.getItem("conformeia-audit") || "null");
+    if (saved && saved.answers) { answers = saved.answers; }
+  } catch (e) {}
+  render(0);
+  refreshProgress();
+})();
+</script>
+</body>
+</html>

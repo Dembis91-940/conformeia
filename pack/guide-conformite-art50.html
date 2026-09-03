@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide pratique — Conformité Art. 50 EU AI Act pour PME</title>
+<meta name="description" content="Guide pratique de mise en conformité à l'article 50 du Règlement (UE) 2024/1689 : obligations, 4 situations déployeur, mentions types, procédure interne, registre.">
+<style>
+  :root{--ink:#13171C;--muted:#5A6470;--electric:#064BD9;--oficial:#C8102E;--ok:#0E7A3C;--line:#D8D5CA;--paper:#FFFFFF;--band:#F3F1EA}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:#E9E6DC;color:var(--ink);line-height:1.62;font-size:15px}
+  .page{max-width:820px;margin:28px auto;background:var(--paper);padding:56px 64px;box-shadow:0 4px 30px rgba(0,0,0,.12)}
+  h1,h2,h3,h4{font-family:Georgia,'Iowan Old Style','Times New Roman',serif;line-height:1.25}
+  h1{font-size:2.1rem;letter-spacing:-.01em}
+  h2{font-size:1.5rem;margin:34px 0 12px;padding-top:22px;border-top:3px solid var(--ink);letter-spacing:-.005em}
+  h2 .n{color:var(--electric);margin-right:8px}
+  h3{font-size:1.12rem;margin:22px 0 8px}
+  p{margin:10px 0}
+  ul,ol{margin:10px 0 10px 22px}
+  li{margin:5px 0}
+  strong{color:var(--ink)}
+  .lead{font-size:1.05rem;color:var(--muted)}
+  .kicker{font-size:.72rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--electric)}
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.88rem}
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+  th{background:var(--band);font-weight:700}
+  .box{border:1px solid var(--line);border-left:4px solid var(--electric);background:var(--band);border-radius:0 10px 10px 0;padding:16px 18px;margin:16px 0}
+  .box.danger{border-left-color:var(--oficial)}
+  .box.ok{border-left-color:var(--ok)}
+  .box h4{font-size:.95rem;margin-bottom:6px;letter-spacing:.02em}
+  .mention{background:#F4F7FF;border:1px solid #C9D8F5;border-radius:8px;padding:12px 14px;font-size:.9rem;margin:8px 0}
+  .mention .lab{display:block;font-size:.66rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--electric);margin-bottom:4px}
+  .tag{display:inline-block;font-size:.64rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:4px 9px;border-radius:6px;margin-right:6px}
+  .tag.oblig{background:#F7E3E6;color:var(--oficial)}
+  .tag.delay{background:#F6ECD4;color:#8A6414}
+  .tag.fourn{background:#E4E9F5;color:var(--electric)}
+  .tag.dep{background:#F7E3E6;color:var(--oficial)}
+  .toc{background:var(--band);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin:24px 0}
+  .toc b{display:block;margin-bottom:8px;letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;color:var(--muted)}
+  .toc ol{columns:2;column-gap:36px;font-size:.9rem}
+  .check{list-style:none;margin-left:0}
+  .check li{padding:10px 12px;border:1px solid var(--line);border-radius:8px;margin:8px 0;background:#fff}
+  .check li::before{content:"☐";font-weight:800;color:var(--electric);margin-right:10px;font-size:1.05rem}
+  .footer-note{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-size:.74rem;color:var(--muted)}
+  .pagebreak{page-break-before:always}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0;max-width:none;padding:0 6mm}
+    h2{page-break-after:avoid}
+    .box,.mention,table{page-break-inside:avoid}
+    .toc ol{columns:1}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ===== COUVERTURE ===== -->
+  <span class="kicker">ConformeIA · Pack Art. 50 Express</span>
+  <h1>Guide pratique de mise en conformité à l'article 50 du Règlement (UE) 2024/1689</h1>
+  <p class="lead">Pour les PME françaises qui déploient de l'IA générative : chatbots, deepfakes, textes d'intérêt public, outils génératifs sous marque. Version 1.0 — Septembre 2026.</p>
+
+  <div class="toc">
+    <b>Sommaire</b>
+    <ol>
+      <li>Ce que dit la loi (l'Art. 50 en 10 minutes)</li>
+      <li>Fournisseur ou déployeur : quel est votre rôle ?</li>
+      <li>Vue d'ensemble des 4 situations déployeur</li>
+      <li>Situation 1 : chatbot, avatar, voix</li>
+      <li>Situation 2 : images, vidéos, audios photoréalistes</li>
+      <li>Situation 3 : textes d'intérêt public</li>
+      <li>Situation 4 : outils génératifs sous votre marque</li>
+      <li>La procédure interne en 5 étapes</li>
+      <li>Le registre de conformité</li>
+      <li>FAQ des autorités + ressources officielles</li>
+    </ol>
+  </div>
+
+  <div class="box danger">
+    <h4>⚠️ Ce que ce guide n'est pas</h4>
+    <p style="margin:0">Ce guide est un outil opérationnel de mise en conformité, fondé sur le Règlement (UE) 2024/1689 et les publications officielles (Commission européenne, economie.gouv.fr, OIA). Il ne constitue pas un conseil juridique. Pour une situation particulière, un litige ou un périmètre sensible, consultez un professionnel du droit.</p>
+  </div>
+
+  <!-- ===== 1. CE QUE DIT LA LOI ===== -->
+  <h2><span class="n">01.</span> Ce que dit la loi — l'article 50 en 10 minutes</h2>
+  <p>L'article 50 du Règlement (UE) 2024/1689 (règlement sur l'intelligence artificielle, dit « EU AI Act ») impose des <strong>obligations de transparence</strong> aux systèmes d'IA. Il ne réglemente pas « l'IA en général » : il impose à ceux qui <strong>interagissent</strong> avec le public via l'IA de dire que c'est de l'IA.</p>
+
+  <h3>Les 4 obligations de transparence (synthèse)</h3>
+  <table>
+    <tr><th>Paragraphe</th><th>Obligation</th><th>Qui</th><th>Échéance</th></tr>
+    <tr><td>Art. 50 §1</td><td>Informer les personnes qu'elles interagissent avec un système d'IA (sauf si évident)</td><td>Fournisseurs + déployeurs</td><td>En vigueur depuis le 02/08/2026</td></tr>
+    <tr><td>Art. 50 §2</td><td>Étiqueter les contenus générés ou manipulés par IA (deepfakes)</td><td>Déployeurs</td><td>En vigueur depuis le 02/08/2026</td></tr>
+    <tr><td>Art. 50 §3</td><td>Marquage lisible par machine + détectabilité des textes générés par IA d'intérêt public</td><td>Déployeurs qui publient</td><td>Marquage des systèmes existants : au plus tard le 02/12/2026</td></tr>
+    <tr><td>Art. 50 §4</td><td>Divulguer le caractère artificiel des contenus audio/vidéo/images (hors exceptions artistiques)</td><td>Déployeurs</td><td>En vigueur depuis le 02/08/2026</td></tr>
+  </table>
+
+  <div class="box danger">
+    <h4>Sanctions (art. 99, paragraphe 4)</h4>
+    <p style="margin:0">Le non-respect des obligations de l'article 50 est sanctionné par une amende pouvant atteindre <strong>15 000 000 € ou 3 % du chiffre d'affaires annuel mondial</strong> (le montant le plus élevé étant retenu). La bonne foi n'exonère pas : la conformité se <em>prouve</em>.</p>
+  </div>
+
+  <h3>Les deux échéances à retenir</h3>
+  <table>
+    <tr><th>Date</th><th>Ce qui se passe</th><th>Pour qui</th></tr>
+    <tr><td><strong>02/08/2026</strong></td><td>Les obligations de transparence Art. 50 entrent en vigueur : information sur l'interaction IA, étiquetage des deepfakes, marquage des nouveaux systèmes.</td><td>Tous les fournisseurs et déployeurs concernés</td></tr>
+    <tr><td><strong>02/12/2026</strong></td><td>Fin du report pour le marquage des systèmes d'IA <em>déjà en service</em> avant le 02/08/2026 : tout système « hérité » doit être régularisé.</td><td>Tous les déployeurs avec des systèmes existants</td></tr>
+  </table>
+
+  <div class="box">
+    <h4>Le contexte : pourquoi maintenant ?</h4>
+    <p style="margin:0">Environ 190 organisations ont signé le code de bonnes pratiques de l'IA ; les autres doivent prouver leur conformité par leurs propres moyens. Le marché mondial de la provenance des contenus IA est estimé à 1,03 Md$ en 2026 et projeté à 4,67 Md$ en 2031 (CAGR 28,95 %) : la transparence devient un standard commercial, pas seulement une contrainte.</p>
+  </div>
+
+  <!-- ===== 2. FOURNISSEUR OU DÉPLOYEUR ===== -->
+  <h2 class="pagebreak"><span class="n">02.</span> Fournisseur ou déployeur : quel est votre rôle ?</h2>
+  <p>L'article 50 distingue deux rôles. La plupart des PME sont des <strong>déployeurs</strong>, mais certaines cumulent. Cette distinction détermine <em>quelles</em> obligations s'appliquent et <em>qui</em> les porte.</p>
+
+  <table>
+    <tr><th></th><th>Fournisseur <span class="tag fourn">Fournisseur</span></th><th>Déployeur <span class="tag dep">Déployeur</span></th></tr>
+    <tr><td><strong>Définition</strong></td><td>Développe un système d'IA ou le met sur le marché / en service sous son nom (y compris white label, API revendue).</td><td>Utilise un système d'IA dans le cadre de son activité professionnelle, sans le commercialiser.</td></tr>
+    <tr><td><strong>Exemple</strong></td><td>OpenAI, Mistral, Google… ou votre PME si elle vend un générateur de contenus sous sa marque.</td><td>Votre PME qui intègre un chatbot, génère des visuels, rédige des textes avec un outil tiers.</td></tr>
+    <tr><td><strong>Obligations Art. 50 principales</strong></td><td>Concevoir les systèmes pour que les sorties soient détectables / marquées machine ; informer les utilisateurs qu'ils interagissent avec une IA.</td><td>Informer les personnes qu'elles interagissent avec une IA ; étiqueter les contenus ; marquer les textes d'intérêt public.</td></tr>
+    <tr><td><strong>Preuve demandée</strong></td><td>Caractéristiques techniques du système (marquage à la génération).</td><td>Mentions appliquées, registre, procédure documentée.</td></tr>
+  </table>
+
+  <div class="box">
+    <h4>Test rapide de votre rôle</h4>
+    <ol style="margin:8px 0 0">
+      <li>Utilisez-vous des outils IA <strong>tiers</strong> (ChatGPT, Claude, Midjourney, outils métier) dans votre activité ? → <strong>Déployeur</strong> pour ces usages.</li>
+      <li>Vendez-vous ou mettez-vous à disposition un outil ou des contenus génératifs <strong>sous votre marque</strong> (même gratuit) ? → <strong>Fournisseur</strong> pour ce système.</li>
+      <li>Les deux ? → Les deux régimes s'appliquent. Ce guide couvre les deux cas.</li>
+    </ol>
+  </div>
+
+  <!-- ===== 3. VUE D'ENSEMBLE ===== -->
+  <h2><span class="n">03.</span> Les 4 situations déployeur — vue d'ensemble</h2>
+  <p>Quatre situations couvrent l'essentiel des cas PME. Pour chacune : obligation, échéance, exemple, modèle de mention (au chapitre correspondant).</p>
+  <table>
+    <tr><th>#</th><th>Situation</th><th>Obligation</th><th>Échéance</th><th>Sanction possible</th></tr>
+    <tr><td>1</td><td>Chatbot, avatar, assistant vocal</td><td>Informer avant ou au premier contact</td><td>02/08/2026 ✓</td><td>15 M€ / 3 % CA</td></tr>
+    <tr><td>2</td><td>Images, vidéos, audios photoréalistes (deepfakes)</td><td>Étiquetage clair, visible, durable</td><td>02/08/2026 ✓</td><td>15 M€ / 3 % CA</td></tr>
+    <tr><td>3</td><td>Textes d'intérêt public générés par IA</td><td>Marquage machine + mention détectable</td><td>02/12/2026 (systèmes existants)</td><td>15 M€ / 3 % CA</td></tr>
+    <tr><td>4</td><td>Outils génératifs sous votre marque</td><td>Sorties marquées machine + information des utilisateurs</td><td>02/08/2026 ✓</td><td>15 M€ / 3 % CA</td></tr>
+  </table>
+
+  <!-- ===== 4. SITUATION 1 ===== -->
+  <h2 class="pagebreak"><span class="n">04.</span> Situation 1 — Chatbot, avatar, voix (interaction directe)</h2>
+  <p><span class="tag oblig">Obligation</span><span class="tag delay">En vigueur 02/08/2026</span></p>
+  <p>Tout système d'IA qui <strong>interagit directement avec des personnes</strong> (chatbot sur site, assistant WhatsApp, avatar, téléphonie vocale, agent de réservation) doit leur permettre de savoir qu'elles parlent à une IA, <strong>avant ou au premier contact</strong> — sauf si c'est évident au point d'en être inutile (cas rare).</p>
+
+  <h3>Ce qui est exigé concrètement</h3>
+  <ul>
+    <li>Une mention visible <strong>au premier message</strong> du chatbot (pas seulement dans les CGU).</li>
+    <li>La mention doit précéder ou accompagner le premier échange : « Vous discutez avec un agent virtuel (IA). »</li>
+    <li>Interdiction de faire croire à un humain : pas de prénom humain seul, pas de photo d'humain présentée comme agent réel.</li>
+    <li>Pour la voix : annonce vocale au début de l'appel (« Vous êtes mis en relation avec un assistant automatisé. »).</li>
+  </ul>
+
+  <h3>Modèle de mention — chat sur site web</h3>
+  <div class="mention"><span class="lab">Mention à afficher au premier message</span>« Bonjour 👋 Je suis l'assistant virtuel de [Entreprise]. Je suis un programme d'intelligence artificielle : pour toute question, je vous réponds 24 h/24. Souhaitez-vous être mis en relation avec un conseiller humain ? »</div>
+
+  <h3>Modèle de mention — téléphonie vocale</h3>
+  <div class="mention"><span class="lab">Annonce vocale en début d'appel</span>« Vous êtes appelé(e) par l'assistant automatisé de [Entreprise]. Cette conversation est traitée par une intelligence artificielle. Pour parler à un conseiller, dites "conseiller". »</div>
+
+  <h3>Modèle de mention — WhatsApp / messagerie</h3>
+  <div class="mention"><span class="lab">Message d'accueil du canal</span>« [Entreprise] — Service automatisé. Ce compte est géré par un assistant IA : vos réponses sont générées automatiquement et vérifiées par notre équipe en cas de besoin. »</div>
+
+  <div class="box ok">
+    <h4>Vérification rapide (1 minute)</h4>
+    <p style="margin:0">Ouvrez votre chatbot, appelez votre ligne, testez votre avatar. Un visiteur doit pouvoir répondre à la question : « À qui je parle, une machine ou un humain ? » sans lire vos CGU.</p>
+  </div>
+
+  <!-- ===== 5. SITUATION 2 ===== -->
+  <h2 class="pagebreak"><span class="n">05.</span> Situation 2 — Images, vidéos, audios photoréalistes (deepfakes)</h2>
+  <p><span class="tag oblig">Obligation</span><span class="tag delay">En vigueur 02/08/2026</span></p>
+  <p>Tout contenu <strong>généré ou manipulé par IA</strong> qui ressemble à des personnes, objets, lieux ou événements réels (visage, voix, produit, scène) doit être étiqueté comme <strong>artificiellement généré ou manipulé</strong>, de façon <strong>claire, visible et durable</strong>.</p>
+
+  <h3>Ce qui est exigé concrètement</h3>
+  <ul>
+    <li>Étiquette visible <strong>sur le contenu</strong> (incrustée dans l'image, en légende, en incrustation vidéo), pas seulement dans les métadonnées.</li>
+    <li>L'étiquette doit être <strong>durable</strong> : présente sur toutes les diffusions (site, réseaux, print, PLV).</li>
+    <li>Conserver la <strong>traçabilité</strong> : outil utilisé, prompt, version du fichier — pour pouvoir prouver l'origine.</li>
+    <li>Les deepfakes qui se font passer pour des personnes réelles (visage, voix d'une personne existante) relèvent aussi des règles du RGPD et du droit à l'image : vigilance renforcée.</li>
+  </ul>
+
+  <h3>Modèles d'étiquettes</h3>
+  <div class="mention"><span class="lab">Image (incrustation + légende)</span>« Image générée par IA » (pastille incrustée en bas à gauche) + légende : « Visuel réalisé par intelligence artificielle — [outil], [date]. »</div>
+  <div class="mention"><span class="lab">Vidéo</span>« Vidéo générée / modifiée par IA » affiché en continu ou au moins 3 secondes en début et fin de séquence.</div>
+  <div class="mention"><span class="lab">Audio / voix</span>Annonce vocale en début de fichier : « Cette voix a été générée artificiellement. » + mention dans la description.</div>
+
+  <div class="box danger">
+    <h4>Attention aux cas sensibles</h4>
+    <p style="margin:0">Une voix ou un visage de personne réelle généré par IA, même avec consentement, reste un deepfake au sens de l'article 50 : étiquetage obligatoire <em>en plus</em> du consentement. Les contenus à caractère politique, d'actualité ou engageant la santé/sécurité appellent une prudence maximale.</p>
+  </div>
+
+  <!-- ===== 6. SITUATION 3 ===== -->
+  <h2 class="pagebreak"><span class="n">06.</span> Situation 3 — Textes d'intérêt public</h2>
+  <p><span class="tag oblig">Obligation</span><span class="tag delay">Marquage systèmes existants : 02/12/2026</span></p>
+  <p>Les <strong>textes générés par IA</strong> publiés pour <strong>informer le public sur des questions d'intérêt public</strong> (articles, communiqués, actualité, contenus d'information) doivent être <strong>marqués d'une manière lisible par machine</strong> et conçus pour être <strong>détectables comme artificiellement générés ou manipulés</strong>. En pratique, cela signifie deux couches :</p>
+  <ul>
+    <li><strong>Marquage machine</strong> : métadonnées standard dans le fichier (C2PA, IPTC) indiquant l'origine IA du contenu.</li>
+    <li><strong>Mention lisible</strong> : une indication visible pour le lecteur (« Rédigé avec une IA »).</li>
+  </ul>
+
+  <h3>Les 3 étapes de mise en conformité</h3>
+  <ol>
+    <li><strong>Cartographier</strong> : lister vos canaux de publication d'intérêt public (site, blog, newsletter, communiqués, presse locale, réseaux).</li>
+    <li><strong>Outiller</strong> : activer le marquage machine dans vos outils de génération (ex. métadonnées C2PA des outils compatibles, ou insertion manuelle de métadonnées IPTC sur le fichier final).</li>
+    <li><strong>Formaliser</strong> : ajouter la mention standard sous chaque contenu concerné + documenter la procédure (qui génère, qui marque, qui valide).</li>
+  </ol>
+
+  <h3>Modèle de mention — article / communiqué</h3>
+  <div class="mention"><span class="lab">Mention lisible (sous le titre ou en pied d'article)</span>« Cet article a été rédigé avec l'assistance d'une intelligence artificielle, puis vérifié et complété par la rédaction de [Entreprise]. »</div>
+
+  <h3>Marquage machine — exemples d'implémentation</h3>
+  <table>
+    <tr><th>Format</th><th>Standard</th><th>Comment</th></tr>
+    <tr><td>Images / médias</td><td>C2PA (Content Credentials)</td><td>Outils compatibles ou ajout d'un manifest C2PA à la génération</td></tr>
+    <tr><td>Textes / documents</td><td>IPTC / XMP</td><td>Champ « Creator » ou « Rights » renseigné : « Généré par IA — [outil] »</td></tr>
+    <tr><td>Pages web</td><td>Balises &lt;meta&gt; + données structurées</td><td>Métadonnée de provenance dans le &lt;head&gt; et schema.org adapté</td></tr>
+  </table>
+
+  <div class="box">
+    <h4>Échéance 02/12/2026</h4>
+    <p style="margin:0">Les systèmes d'IA déjà en service avant le 02/08/2026 bénéficient d'un report pour le marquage : à régulariser au plus tard le <strong>2 décembre 2026</strong>. Les nouveaux systèmes sont soumis immédiatement. Ne laissez pas la cartographie de vos canaux à la dernière semaine.</p>
+  </div>
+
+  <!-- ===== 7. SITUATION 4 ===== -->
+  <h2 class="pagebreak"><span class="n">07.</span> Situation 4 — Outils génératifs sous votre marque</h2>
+  <p><span class="tag fourn">Rôle fournisseur</span><span class="tag delay">En vigueur 02/08/2026</span></p>
+  <p>Si vous <strong>développez, commercialisez ou revendez</strong> un outil ou des contenus génératifs <strong>sous votre marque</strong> (white label, API, générateur maison, application métier), vous devenez <strong>fournisseur</strong> pour ce système. Vos obligations Art. 50 :</p>
+  <ul>
+    <li><strong>Conception</strong> : les sorties du système doivent être <strong>détectables comme générées par IA</strong> (marquage machine à la génération, filigrane, métadonnées).</li>
+    <li><strong>Information</strong> : vos utilisateurs finaux doivent être informés qu'ils utilisent un système d'IA (onboarding, mentions, documentation).</li>
+    <li><strong>Traçabilité</strong> : conserver la documentation technique de votre système (modèle, version, date de mise en service) — c'est aussi la base du registre exigible.</li>
+  </ul>
+
+  <h3>Cas pratique : votre entreprise vend un générateur de fiches produits</h3>
+  <ul>
+    <li>Le générateur doit insérer une balise de provenance dans chaque fiche exportée (métadonnées + mention « Fiche générée par IA » visible).</li>
+    <li>Les conditions d'utilisation et l'onboarding doivent préciser le caractère IA du service.</li>
+    <li>Le registre interne doit référencer le système (outil, modèle sous-jacent, fournisseur du modèle, version).</li>
+  </ul>
+
+  <div class="box danger">
+    <h4>Piège fréquent</h4>
+    <p style="margin:0">« Je ne fais que mettre mon logo sur un outil tiers. » C'est précisément le scénario white label : le droit vous traite comme fournisseur. Vérifiez aussi les CGU du fournisseur du modèle sous-jacent (revendeur autorisé ou non).</p>
+  </div>
+
+  <!-- ===== 8. PROCÉDURE INTERNE ===== -->
+  <h2 class="pagebreak"><span class="n">08.</span> La procédure interne en 5 étapes</h2>
+  <p>Une procédure simple, datée, signée, avec responsables désignés : c'est elle qui transforme « nous croyons être conformes » en « nous prouvons être conformes ».</p>
+
+  <h3>Étape 1 — Inventaire des usages IA (responsable : direction / référent numérique)</h3>
+  <p>Lister chaque usage : outil, fournisseur, usage métier, données traitées, date de mise en service, situation Art. 50 concernée (1 à 4), responsable. <em>Le registre du chapitre 09 est le support de cette étape.</em></p>
+
+  <h3>Étape 2 — Qualification des risques (responsable : référent conformité)</h3>
+  <p>Pour chaque usage : rôle (déployeur / fournisseur), obligations applicables, échéance, exposition (faible / moyenne / élevée). Prioriser les usages interactifs et les contenus photoréalistes.</p>
+
+  <h3>Étape 3 — Application des mentions (responsable : équipes concernées)</h3>
+  <p>Mettre en place les mentions du chapitre 05 à 07 selon les situations identifiées. Chaque mise en place est datée et vérifiée par un second regard (contrôle qualité).</p>
+
+  <h3>Étape 4 — Documentation (responsable : référent conformité)</h3>
+  <p>Remplir le registre, conserver les preuves (captures d'écran des mentions en ligne, versions des outils, dates), archiver 5 ans. Revoir la procédure à chaque nouveau déploiement d'IA et au minimum une fois par an.</p>
+
+  <h3>Étape 5 — Revue et preuve (responsable : direction)</h3>
+  <p>Une revue annuelle + une revue à chaque changement majeur. Le dossier de conformité (registre + preuves + procédure) est présentable à un contrôleur, un client ou un assureur.</p>
+
+  <!-- ===== 9. REGISTRE ===== -->
+  <h2><span class="n">09.</span> Le registre de conformité</h2>
+  <p>Un tableau par système d'IA. Copiez le modèle ci-dessous (disponible aussi en fichier séparé dans le pack).</p>
+  <table>
+    <tr><th>Champ</th><th>À remplir</th><th>Exemple</th></tr>
+    <tr><td>Référence</td><td>Identifiant unique du système</td><td>IA-2026-001</td></tr>
+    <tr><td>Désignation</td><td>Nom commercial / interne</td><td>Chatbot de réservation site web</td></tr>
+    <tr><td>Fournisseur du système</td><td>Qui l'a développé / mis sur le marché</td><td>[Nom de l'éditeur ou « interne »]</td></tr>
+    <tr><td>Modèle sous-jacent (si applicable)</td><td>Modèle LLM / génératif utilisé</td><td>GPT-4o (API)</td></tr>
+    <tr><td>Usage métier</td><td>Ce que fait le système dans l'entreprise</td><td>Répondre aux demandes de réservation</td></tr>
+    <tr><td>Situation Art. 50</td><td>1 / 2 / 3 / 4</td><td>1 (interaction directe)</td></tr>
+    <tr><td>Rôle</td><td>Déployeur / Fournisseur</td><td>Déployeur</td></tr>
+    <tr><td>Date de mise en service</td><td>JJ/MM/AAAA</td><td>12/03/2026</td></tr>
+    <tr><td>Obligations appliquées</td><td>Mentions, marquage, procédures</td><td>Mention « agent virtuel » au premier message (13/03/2026)</td></tr>
+    <tr><td>Preuves conservées</td><td>Où sont les captures / documents</td><td>Dossier /conformite/IA-2026-001</td></tr>
+    <tr><td>Responsable</td><td>Nom + fonction</td><td>M. Dupont — Référent conformité</td></tr>
+    <tr><td>Dernière revue</td><td>JJ/MM/AAAA</td><td>01/09/2026</td></tr>
+  </table>
+
+  <!-- ===== 10. FAQ + SOURCES ===== -->
+  <h2 class="pagebreak"><span class="n">10.</span> FAQ des autorités & ressources officielles</h2>
+
+  <h3>Questions fréquentes</h3>
+  <p><strong>« Nous utilisons ChatGPT en interne, sans exposer le public. Sommes-nous concernés ? »</strong><br>Pour un usage purement interne sans interaction avec des personnes (résumé de documents, aide à la rédaction), les obligations d'information du public ne s'appliquent pas — mais si les sorties sont publiées (textes, images), les situations 2 et 3 s'appliquent.</p>
+  <p><strong>« Nos textes sont "assistés" par IA, pas générés. C'est pareil ? »</strong><br>La frontière dépend du degré d'automatisation et de l'usage. La prudence : dès qu'un contenu publié est substantiellement produit par IA, marquez-le. Documentez votre ligne de conduite dans la procédure interne (cohérence = défendable).</p>
+  <p><strong>« Le fournisseur de mon chatbot (OpenAI, etc.) n'est-il pas responsable à ma place ? »</strong><br>Les obligations se cumulent : le fournisseur doit concevoir des systèmes détectables ; le déployeur (vous) doit informer le public et étiqueter. Les deux sont sanctionnables indépendamment.</p>
+  <p><strong>« L'étiquetage "image générée par IA" va-t-il nuire à notre image ? »</strong><br>L'inverse : la transparence est devenue un argument commercial. Les entreprises non marquées sont celles qu'on suspecte. La mention prouve la maîtrise.</p>
+  <p><strong>« Que se passe-t-il si on ne fait rien ? »</strong><br>Exposition à une sanction Art. 99.4 (jusqu'à 15 M€ / 3 % CA), aux demandes d'information des autorités, et à un risque réputationnel croissant à l'approche du 02/12/2026.</p>
+
+  <h3>Ressources officielles (vérifiées)</h3>
+  <ul>
+    <li>Règlement (UE) 2024/1689 — texte consolidé : EUR-Lex</li>
+    <li>FAQ et lignes directrices : Commission européenne — digital-strategy.ec.europa.eu (cadre réglementaire IA)</li>
+    <li>Portail officiel français : economie.gouv.fr (IA) et oia.fr (Office de l'IA)</li>
+    <li>CNIL : cnil.fr — fiches pratiques IA et protection des données</li>
+    <li>Standards de provenance : C2PA (c2pa.org), IPTC (iptc.org)</li>
+  </ul>
+
+  <div class="box ok">
+    <h4>Vous êtes arrivé au bout du guide 🎉</h4>
+    <p style="margin:0">Enchaînez avec la checklist des 4 situations (fichier séparé), puis remplissez le registre. En un week-end, votre entreprise passe du statut « exposée » à « conforme documentée ».</p>
+  </div>
+
+  <p class="footer-note">ConformeIA — Pack Art. 50 Express, version 1.0 (septembre 2026). Document fondé sur le Règlement (UE) 2024/1689 et les publications officielles citées. Ne constitue pas un conseil juridique. Reproduction interdite sans autorisation. Pour un avis formel, consultez un professionnel du droit.</p>
+</div>
+</body>
+</html>

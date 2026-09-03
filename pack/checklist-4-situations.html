@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist Conformité Art. 50 — 4 situations déployeur (imprimable)</title>
+<meta name="description" content="Checklist de mise en conformité à l'article 50 de l'EU AI Act : 4 situations déployeur, cases à cocher, responsable et délai. Format A4 imprimable.">
+<style>
+  :root{--ink:#13171C;--muted:#5A6470;--electric:#064BD9;--oficial:#C8102E;--ok:#0E7A3C;--line:#D8D5CA;--band:#F3F1EA}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:#E9E6DC;color:var(--ink);line-height:1.6;font-size:15px}
+  .page{max-width:800px;margin:28px auto;background:#fff;padding:52px 60px;box-shadow:0 4px 30px rgba(0,0,0,.12)}
+  h1{font-family:Georgia,'Times New Roman',serif;font-size:1.9rem;letter-spacing:-.01em;line-height:1.2}
+  h2{font-family:Georgia,serif;font-size:1.25rem;margin:28px 0 4px}
+  .kicker{font-size:.7rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--electric)}
+  .lead{color:var(--muted);margin:10px 0 4px}
+  .meta{font-size:.78rem;color:var(--muted);margin-bottom:22px}
+  .situation{border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0;page-break-inside:avoid;background:#fff}
+  .situation .head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:12px}
+  .situation .head h2{margin:0}
+  .tag{font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:6px;white-space:nowrap}
+  .tag.oblig{background:#F7E3E6;color:var(--oficial)}
+  .tag.delay{background:#F6ECD4;color:#8A6414}
+  .check{list-style:none;margin:6px 0 0}
+  .check li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed #E4E1D6;font-size:.92rem}
+  .check li:last-child{border-bottom:none}
+  .check input{width:18px;height:18px;margin-top:3px;accent-color:var(--electric);flex-shrink:0}
+  .check .who{display:block;font-size:.76rem;color:var(--muted);margin-top:2px}
+  .check .who b{color:var(--ink)}
+  .foot{margin-top:30px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:2px solid var(--ink);padding-top:16px}
+  .foot .sign{flex:1;min-width:200px}
+  .foot .sign .lbl{font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:26px;border-bottom:1px solid var(--ink)}
+  .note{font-size:.74rem;color:var(--muted);margin-top:16px}
+  .btn{position:fixed;top:18px;right:18px;background:var(--electric);color:#fff;border:none;padding:11px 18px;border-radius:9px;font-weight:700;font-size:.85rem;cursor:pointer;box-shadow:0 6px 20px rgba(6,75,217,.35);z-index:9}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0;max-width:none;padding:0}
+    .btn{display:none}
+    .situation{page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<button class="btn" onclick="window.print()">🖨️ Imprimer / PDF</button>
+<div class="page">
+  <span class="kicker">ConformeIA · Pack Art. 50 Express</span>
+  <h1>Checklist de conformité Art. 50<br>Les 4 situations déployeur</h1>
+  <p class="lead">Cochez au fur et à mesure. Chaque case exige un responsable et une date — c'est la preuve documentaire de votre diligence.</p>
+  <p class="meta">Entreprise : ______________ · Référent conformité : ______________ · Dernière mise à jour : ____/____/______</p>
+
+  <div class="situation">
+    <div class="head"><h2>Situation 1 — Chatbot, avatar, voix</h2><span class="tag oblig">En vigueur 02/08/2026</span></div>
+    <ul class="check">
+      <li><input type="checkbox"><span>Inventaire des systèmes d'interaction directe avec le public (chat site, WhatsApp, téléphonie, avatar, voix).<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+      <li><input type="checkbox"><span>Mention « agent virtuel / IA » visible au premier message de chaque canal.<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+      <li><input type="checkbox"><span>Aucun chatbot ne se présente comme un humain (pas de prénom seul, pas de photo trompeuse).<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+      <li><input type="checkbox"><span>Annonce vocale en début d'appel pour les lignes automatisées.<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+      <li><input type="checkbox"><span>Chemin vers un humain toujours accessible (mention « demander un conseiller »).<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+      <li><input type="checkbox"><span>Preuve conservée : captures d'écran des mentions en ligne, datées.<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+    </ul>
+  </div>
+
+  <div class="situation">
+    <div class="head"><h2>Situation 2 — Deepfakes & contenus photoréalistes</h2><span class="tag oblig">En vigueur 02/08/2026</span></div>
+    <ul class="check">
+      <li><input type="checkbox"><span>Inventaire des contenus générés/modifiés par IA (images, vidéos, audios) produits ou diffusés.<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+      <li><input type="checkbox"><span>Étiquette visible sur chaque diffusion : « Image/vidéo/audio généré(e) par IA » (incrustation + légende).<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+      <li><input type="checkbox"><span>Traçabilité conservée : outil, prompt, version de fichier pour chaque contenu.<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+      <li><input type="checkbox"><span>Cas sensibles vérifiés : voix/visage de personne réelle → consentement + étiquetage.<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+      <li><input type="checkbox"><span>Règle interne écrite : quels contenus peuvent être générés, lesquels sont interdits.<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+    </ul>
+  </div>
+
+  <div class="situation">
+    <div class="head"><h2>Situation 3 — Textes d'intérêt public</h2><span class="tag delay">Marquage existants : 02/12/2026</span></div>
+    <ul class="check">
+      <li><input type="checkbox"><span>Cartographie des canaux de publication d'intérêt public (site, blog, newsletter, communiqués, presse, réseaux).<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+      <li><input type="checkbox"><span>Mention lisible sous chaque contenu généré par IA : « Rédigé avec une IA, vérifié par [équipe] ».<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+      <li><input type="checkbox"><span>Marquage machine opérationnel (C2PA / IPTC / balises meta selon format).<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+      <li><input type="checkbox"><span>Processus de validation humaine documenté (qui relit, qui valide, qui publie).<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+      <li><input type="checkbox"><span>Systèmes existants planifiés pour le marquage avant le <b>02/12/2026</b>.<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+    </ul>
+  </div>
+
+  <div class="situation">
+    <div class="head"><h2>Situation 4 — Outils génératifs sous votre marque</h2><span class="tag oblig">Rôle fournisseur · 02/08/2026</span></div>
+    <ul class="check">
+      <li><input type="checkbox"><span>Identification des outils génératifs commercialisés ou mis à disposition sous votre marque (white label, API, maison).<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+      <li><input type="checkbox"><span>Sorties marquées machine à la génération (métadonnées, filigrane).<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+      <li><input type="checkbox"><span>Utilisateurs finaux informés qu'ils utilisent une IA (onboarding, CGU, mentions).<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+      <li><input type="checkbox"><span>Documentation technique conservée (modèle sous-jacent, version, date de mise en service).<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+      <li><input type="checkbox"><span>CGU du fournisseur du modèle vérifiées (revendeur autorisé).<span class="who">Responsable : <b>________</b> · Délai : <b>________</b></span></span></li>
+    </ul>
+  </div>
+
+  <div class="foot">
+    <div class="sign"><span class="lbl">Fait le &amp; signature (référent conformité)</span></div>
+    <div class="sign"><span class="lbl">Visa direction</span></div>
+  </div>
+  <p class="note">ConformeIA — Pack Art. 50 Express · Document interne de mise en conformité (Règlement UE 2024/1689, art. 50). Ne remplace pas un conseil juridique. Version 1.0 — septembre 2026.</p>
+</div>
+</body>
+</html>

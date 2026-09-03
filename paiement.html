@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commander le Pack Art. 50 Express — ConformeIA</title>
+<meta name="description" content="Commandez le pack de conformité à l'article 50 de l'EU AI Act : Pack Express 49 €, Pack Pro 149 €, Conformité complète à partir de 290 €. Livraison par email sous 24 h.">
+<meta property="og:locale" content="fr_FR">
+<style>
+  :root{
+    --ink900:#0C1219;--paper:#F3F1EA;--paper2:#EAE7DC;--ink:#13171C;--muted:#6B7280;--frost:#EDF0F3;
+    --electric:#064BD9;--electric-h:#0438A8;--oficial:#C8102E;--ok:#0E7A3C;--gold:#A97B1F;
+    --line:rgba(19,23,28,.14);--line-dark:rgba(237,240,243,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+  .serif{font-family:Georgia,'Iowan Old Style','Palatino Linotype','Times New Roman',serif}
+  a{color:inherit}
+  .top{background:var(--ink900);color:var(--frost);padding:14px 0;border-bottom:1px solid var(--line-dark)}
+  .top .wrap{max-width:960px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .top .logo{font-weight:800;font-size:1.05rem}
+  .top .logo em{font-style:normal;color:var(--electric)}
+  .top a{color:#AEB9C4;text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+  .top a:hover{color:#fff}
+  main{max-width:960px;margin:0 auto;padding:36px 20px 80px}
+  .kicker{font-size:.72rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--oficial)}
+  h1{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:700;line-height:1.1;margin:10px 0 8px}
+  .intro{color:var(--muted);margin-bottom:28px;max-width:640px}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:30px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;position:relative;cursor:pointer;transition:transform .18s,border-color .18s,box-shadow .18s}
+  .card:hover{transform:translateY(-3px)}
+  .card.sel{border-color:var(--electric);box-shadow:0 10px 30px rgba(6,75,217,.15);outline:2px solid var(--electric);outline-offset:2px}
+  .card .badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--electric);color:#fff;font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:999px;white-space:nowrap}
+  .card .badge.service{background:var(--oficial)}
+  .card h3{font-size:.9rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .card .price{font-family:Georgia,serif;font-size:2.2rem;font-weight:700;line-height:1.1}
+  .card .price small{font-size:.85rem;color:var(--muted);font-weight:400}
+  .card .sub{font-size:.82rem;color:var(--muted);margin:8px 0 12px;min-height:36px}
+  .card ul{list-style:none}
+  .card li{font-size:.82rem;padding:5px 0;border-bottom:1px solid var(--line);display:flex;gap:8px}
+  .card li:last-child{border-bottom:none}
+  .card li .tick{color:var(--ok);font-weight:800}
+
+  .checkout{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px}
+  .checkout h2{font-family:Georgia,serif;font-size:1.5rem;margin-bottom:6px}
+  .checkout .sel-line{font-size:.9rem;color:var(--muted);margin-bottom:20px}
+  .checkout .sel-line b{color:var(--ink)}
+  .fgroup{margin-bottom:14px}
+  .fgroup label{display:block;font-size:.8rem;font-weight:700;margin-bottom:5px}
+  .fgroup input,.fgroup select{width:100%;padding:12px 14px;border:1px solid rgba(19,23,28,.22);border-radius:10px;font-size:.93rem;background:#fff;color:var(--ink);font-family:inherit}
+  .fgroup input:focus,.fgroup select:focus{outline:2px solid var(--electric);border-color:var(--electric)}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .req{color:var(--oficial)}
+  .total{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);margin-top:8px;padding-top:16px;font-weight:800;font-size:1.1rem}
+  .total .sum{font-family:Georgia,serif;font-size:1.6rem}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:10px;font-weight:700;font-size:.95rem;border:none;cursor:pointer;transition:transform .15s,background .15s;width:100%;margin-top:14px}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:var(--electric);color:#fff}
+  .btn-primary:hover{background:var(--electric-h)}
+  .stripe-note{margin-top:14px;font-size:.8rem;color:var(--muted);background:var(--paper);border:1px dashed var(--line);border-radius:10px;padding:12px 14px}
+  .rgpd{font-size:.74rem;color:var(--muted);margin-top:12px}
+  .ok-box{display:none;background:#E9F5EC;border:1px solid var(--ok);color:var(--ok);padding:18px 20px;border-radius:12px;font-weight:700;margin-bottom:20px}
+  .back{display:inline-block;margin-top:22px;font-size:.85rem;color:var(--muted);text-decoration:none}
+  .back:hover{color:var(--ink)}
+  @media(max-width:820px){.cards{grid-template-columns:1fr}.frow{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><div class="logo">Conforme<em>IA</em></div><a href="index.html">← Retour à l'accueil</a></div></div>
+
+<main>
+  <span class="kicker">Commande</span>
+  <h1 class="serif">Choisissez votre niveau de conformité.</h1>
+  <p class="intro">Livraison par email sous 24 h ouvrées. Mises à jour réglementaires incluses 12 mois. Garantie 14 jours « conforme documentairement ou remboursé ».</p>
+
+  <div class="ok-box" id="okBox">✓ Commande reçue ! Nous revenons vers vous sous 24 h ouvrées avec les instructions de règlement et la livraison de votre pack. Vérifiez votre boîte mail.</div>
+
+  <div class="cards" id="cards"></div>
+
+  <div class="checkout">
+    <h2 class="serif">Finaliser ma commande</h2>
+    <p class="sel-line">Offre sélectionnée : <b id="selLabel">—</b> · <b id="selPrix">—</b></p>
+    <form id="orderForm" novalidate>
+      <div class="frow">
+        <div class="fgroup"><label>Nom complet <span class="req">*</span></label><input id="o-nom" required placeholder="Marie Dupont"></div>
+        <div class="fgroup"><label>Email de livraison <span class="req">*</span></label><input id="o-email" type="email" required placeholder="marie@entreprise.fr"></div>
+      </div>
+      <div class="frow">
+        <div class="fgroup"><label>Entreprise</label><input id="o-societe" placeholder="SARL Exemple"></div>
+        <div class="fgroup"><label>SIRET (pour facturation)</label><input id="o-siret" placeholder="000 000 000 00000"></div>
+      </div>
+      <div class="fgroup"><label>Message (optionnel)</label><input id="o-msg" placeholder="Votre situation IA en 2 lignes…"></div>
+      <div class="total"><span>Total</span><span class="sum" id="selTotal">—</span></div>
+      <button class="btn btn-primary" type="submit" id="payBtn">Commander et recevoir le pack →</button>
+      <p class="stripe-note">🔒 Paiement par carte via Stripe : l'activation du compte marchand est en cours — votre commande est confirmée par email et le lien de paiement sécurisé vous est transmis sous 24 h. Dès l'activation, le règlement est instantané sur cette page.</p>
+      <p class="rgpd">Vos données servent uniquement à traiter votre commande et à vous livrer le pack. Conservées 12 mois, jamais revendues. Conforme RGPD.</p>
+    </form>
+  </div>
+
+  <a class="back" href="index.html">← Retour à l'accueil ConformeIA</a>
+</main>
+
+<script src="js/tarifs.js"></script>
+<script>
+(function () {
+  "use strict";
+  var T = window.CONFORMEIA_TARIFS;
+  if (!T) return;
+  var ids = ["pack49", "pack149", "service"];
+  var selected = "pack149";
+
+  function labelPrix(id) {
+    var p = T.PACKS[id];
+    if (p.prixMax) return T.formatPrix(p.prix) + " – " + T.formatPrix(p.prixMax);
+    return T.formatPrix(p.prix) + " TTC";
+  }
+
+  var cards = document.getElementById("cards");
+  ids.forEach(function (id) {
+    var p = T.PACKS[id];
+    var badgeHtml = p.badge ? '<span class="badge' + (p.badge === "SERVICE" ? " service" : "") + '">' + p.badge + "</span>" : "";
+    var prixHtml = p.prixMax
+      ? T.formatPrix(p.prix) + ' <small>– ' + T.formatPrix(p.prixMax) + '</small>'
+      : T.formatPrix(p.prix) + " <small>TTC</small>";
+    var items = p.contenu.map(function (c) { return '<li><span class="tick">✓</span><span>' + c + "</span></li>"; }).join("");
+    var div = document.createElement("div");
+    div.className = "card" + (id === selected ? " sel" : "");
+    div.id = "c-" + id;
+    div.innerHTML = badgeHtml + "<h3>" + p.nom + "</h3><div class='price'>" + prixHtml + "</div><div class='sub'>" + p.cible + "</div><ul>" + items + "</ul>";
+    div.addEventListener("click", function () { select(id); });
+    cards.appendChild(div);
+  });
+
+  function select(id) {
+    selected = id;
+    ids.forEach(function (i) { document.getElementById("c-" + i).classList.toggle("sel", i === id); });
+    var p = T.PACKS[id];
+    document.getElementById("selLabel").textContent = p.nom;
+    document.getElementById("selPrix").textContent = labelPrix(id);
+    document.getElementById("selTotal").textContent = labelPrix(id);
+    var hash = id === "pack49" ? "pack49" : (id === "pack149" ? "pack149" : "service");
+    history.replaceState(null, "", "#" + hash);
+  }
+
+  /* Présélection depuis l'ancre de la landing (#pack49, #service…) */
+  var h = location.hash.replace("#", "");
+  if (T.PACKS[h]) select(h); else select(selected);
+
+  /* EmailJS */
+  var SERVICE_ID = "service_cy1ytdb", TEMPLATE_ID = "template_xpo58cv", PUBLIC_KEY = "8Pui4ZEqxW2jRVF7h";
+  var s = document.createElement("script");
+  s.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
+  s.onload = function () { try { emailjs.init({ publicKey: PUBLIC_KEY }); } catch (e) {} };
+  document.head.appendChild(s);
+
+  document.getElementById("orderForm").addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var nom = document.getElementById("o-nom").value.trim();
+    var email = document.getElementById("o-email").value.trim();
+    if (!nom || !email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      alert("Merci de renseigner votre nom et un email valide.");
+      return;
+    }
+    var p = T.PACKS[selected];
+    var payload = {
+      nom: nom,
+      email: email,
+      societe: document.getElementById("o-societe").value,
+      siret: document.getElementById("o-siret").value,
+      offre: p.nom,
+      prix: labelPrix(selected),
+      message: document.getElementById("o-msg").value,
+      site: "ConformeIA — Commande pack Art. 50"
+    };
+    var done = function () {
+      document.getElementById("okBox").style.display = "block";
+      document.getElementById("orderForm").style.display = "none";
+      document.getElementById("payBtn").disabled = true;
+    };
+    if (window.emailjs) {
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, payload).then(done).catch(function () { done(); });
+    } else {
+      done();
+    }
+  });
+})();
+</script>
+</body>
+</html>

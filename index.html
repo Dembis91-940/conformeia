@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ConformeIA — Pack Conformité EU AI Act Article 50 pour PME françaises</title>
+<meta name="description" content="Article 50 de l'EU AI Act en vigueur depuis le 2 août 2026 : chatbots, deepfakes, textes d'intérêt public, outils génératifs. Audit gratuit 3 min, pack de mise en conformité 49 €, amendes jusqu'à 15 M€. Marquage des systèmes existants : 2 décembre 2026.">
+<meta name="keywords" content="EU AI Act, article 50, conformité IA, transparence IA, deepfake étiquetage, chatbot mention IA, marquage machine, PME France">
+<meta property="og:title" content="ConformeIA — Votre IA doit dire qu'elle est une IA. Depuis le 2 août 2026.">
+<meta property="og:description" content="Audit gratuit 3 min + pack de mise en conformité Art. 50 (guide, checklist 4 situations, modèles de mentions, procédure interne). Amendes jusqu'à 15 M€ ou 3 % du CA.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230C1219'/%3E%3Ctext x='50' y='68' font-size='52' font-family='Georgia,serif' font-weight='bold' fill='%23F3F1EA' text-anchor='middle'%3E§%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink900:#0C1219;      /* encre réglementaire (fond sombre) */
+    --ink800:#141B24;
+    --paper:#F3F1EA;       /* vélin officiel (fond clair) */
+    --paper2:#EAE7DC;
+    --ink:#13171C;         /* texte sur clair */
+    --muted:#6B7280;
+    --frost:#EDF0F3;       /* texte sur sombre */
+    --electric:#064BD9;    /* CTA */
+    --electric-h:#0438A8;
+    --oficial:#C8102E;     /* rouge réglementaire — obligations */
+    --ok:#0E7A3C;
+    --gold:#A97B1F;
+    --line:rgba(19,23,28,.14);
+    --line-dark:rgba(237,240,243,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--ink900);color:var(--frost);overflow-x:hidden;line-height:1.6}
+  .serif{font-family:Georgia,'Iowan Old Style','Palatino Linotype','Times New Roman',serif}
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  section{position:relative}
+
+  /* ===== NAV ===== */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px 32px;background:linear-gradient(rgba(12,18,25,.92),rgba(12,18,25,0));transition:background .3s}
+  .logo{font-weight:800;font-size:1.2rem;letter-spacing:.01em}
+  .logo em{font-style:normal;color:var(--electric)}
+  .logo small{display:block;font-size:.6rem;font-weight:600;letter-spacing:.28em;color:var(--muted);text-transform:uppercase}
+  .nav-links a{color:var(--frost);text-decoration:none;margin-left:26px;font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.85;transition:opacity .2s}
+  .nav-links a:hover{opacity:1;color:#fff}
+  .nav-cta{background:var(--electric);color:#fff!important;padding:10px 18px;border-radius:8px;opacity:1!important}
+  .nav-cta:hover{background:var(--electric-h)}
+
+  /* ===== HERO ===== */
+  #bg{position:fixed;inset:0;z-index:0}
+  .hero{min-height:100vh;display:flex;align-items:center;position:relative;z-index:2;padding:130px 0 90px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:#AEB9C4;border:1px solid var(--line-dark);padding:8px 14px;border-radius:999px;background:rgba(237,240,243,.04)}
+  .kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--oficial);animation:pulse 1.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+  .hero h1{font-size:clamp(2.5rem,5.4vw,4.3rem);font-weight:700;letter-spacing:-.015em;line-height:1.06;margin:22px 0 18px}
+  .hero h1 .underline{background:linear-gradient(180deg,transparent 62%,rgba(200,16,46,.55) 62%);padding-bottom:2px}
+  .hero h1 .accent{color:var(--electric)}
+  .hero p.lead{font-size:1.12rem;color:#AEB9C4;max-width:560px;margin-bottom:28px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:15px 28px;border-radius:10px;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .18s,box-shadow .18s,background .18s;cursor:pointer;border:none}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--electric);color:#fff;box-shadow:0 10px 30px rgba(6,75,217,.4)}
+  .btn-primary:hover{background:var(--electric-h);box-shadow:0 14px 40px rgba(6,75,217,.55)}
+  .btn-ghost{border:1px solid var(--line-dark);color:var(--frost);background:rgba(237,240,243,.04)}
+  .btn-ghost:hover{border-color:rgba(237,240,243,.4)}
+  .deadline{margin-top:30px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;border:1px solid rgba(200,16,46,.4);background:rgba(200,16,46,.08);border-radius:12px;padding:14px 18px;max-width:560px}
+  .deadline .stamp{font-family:Georgia,serif;font-weight:700;color:var(--oficial);border:2px solid var(--oficial);border-radius:6px;padding:4px 10px;font-size:.85rem;transform:rotate(-2deg)}
+  .deadline .txt{font-size:.9rem;color:#D8DEE5}
+  .deadline .txt b{color:#fff}
+  .deadline .cd{font-weight:800;color:var(--oficial);font-size:1rem;letter-spacing:.02em}
+
+  /* Filigrane ART. 50 */
+  .watermark{position:absolute;right:-40px;top:8%;font-family:Georgia,serif;font-size:clamp(9rem,24vw,20rem);font-weight:700;color:rgba(237,240,243,.028);pointer-events:none;user-select:none;line-height:1;z-index:0}
+
+  /* Carte du hero : "Le registre officiel" */
+  .hero-card{background:linear-gradient(160deg,rgba(237,240,243,.06),rgba(237,240,243,.02));border:1px solid var(--line-dark);border-radius:18px;padding:26px;backdrop-filter:blur(8px);position:relative;z-index:2}
+  .hero-card .hc-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px dashed var(--line-dark);padding-bottom:12px;margin-bottom:14px}
+  .hero-card .hc-head b{font-size:.85rem;letter-spacing:.18em;text-transform:uppercase}
+  .hero-card .hc-head span{font-size:.72rem;color:var(--muted)}
+  .hc-row{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid rgba(237,240,243,.06);font-size:.86rem}
+  .hc-row .st{color:#AEB9C4}
+  .hc-row .val{font-weight:700;text-align:right}
+  .val.danger{color:#FF6B7E}
+  .val.ok{color:#5BD08A}
+  .hc-badge{display:inline-block;margin-top:14px;background:rgba(6,75,217,.14);border:1px solid rgba(6,75,217,.5);color:#7FA8FF;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 12px;border-radius:8px}
+
+  /* ===== BANDEAU URGENCE ===== */
+  .bandeau{background:var(--paper);color:var(--ink);padding:56px 0}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+  .stat b{font-family:Georgia,serif;font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700;display:block;color:var(--ink900)}
+  .stat b .unit{font-size:.5em;color:var(--muted)}
+  .stat span{font-size:.85rem;color:var(--muted);line-height:1.4;display:block;margin-top:4px}
+  .stat.danger b{color:var(--oficial)}
+  .stat.blue b{color:var(--electric)}
+
+  /* ===== FILM DE CONVERSION ===== */
+  .film{padding:110px 0;background:var(--ink900)}
+  .scene{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:44px 0;opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+  .scene.visible{opacity:1;transform:none}
+  .scene .num{font-family:Georgia,serif;font-size:1rem;font-weight:700;color:var(--oficial);letter-spacing:.24em}
+  .scene h2{font-size:clamp(1.8rem,3.6vw,2.9rem);font-weight:700;line-height:1.1;margin:12px 0 16px;letter-spacing:-.01em}
+  .scene p{color:#AEB9C4;font-size:1.02rem;max-width:480px}
+  .scene-card{border:1px solid var(--line-dark);border-radius:16px;padding:24px;background:rgba(237,240,243,.03)}
+  .scene-card h4{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:#8A96A3;margin-bottom:10px}
+  .scene-card .big{font-family:Georgia,serif;font-size:1.7rem;font-weight:700;line-height:1.25}
+  .scene-card .big.danger{color:#FF6B7E}
+  .scene-card .big.blue{color:#7FA8FF}
+  .scene-card .big.gold{color:#E3B84C}
+  .scene-card .sub{font-size:.88rem;color:#AEB9C4;margin-top:10px}
+
+  /* ===== TRIADE ===== */
+  .triade{background:var(--paper);color:var(--ink);padding:64px 0}
+  .triade .wrap{display:flex;gap:40px;justify-content:space-between;flex-wrap:wrap}
+  .triade div{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.05rem}
+  .triade .tick{width:26px;height:26px;border-radius:50%;background:var(--ok);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+
+  /* ===== 4 SITUATIONS ===== */
+  .situations{padding:110px 0;background:var(--ink900)}
+  .sec-head{max-width:720px;margin-bottom:56px}
+  .sec-head .kicker{color:#8A96A3}
+  .sec-head h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:700;line-height:1.08;margin:16px 0 14px;letter-spacing:-.01em}
+  .sec-head p{color:#AEB9C4;font-size:1.02rem}
+  .sit-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .sit{border:1px solid var(--line-dark);border-radius:16px;padding:26px;background:rgba(237,240,243,.03);transition:transform .2s,border-color .2s;position:relative}
+  .sit:hover{transform:translateY(-4px);border-color:rgba(6,75,217,.5)}
+  .sit .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 10px;border-radius:6px;margin-bottom:14px}
+  .tag.oblig{background:rgba(200,16,46,.14);color:#FF6B7E;border:1px solid rgba(200,16,46,.4)}
+  .tag.delay{background:rgba(169,123,31,.14);color:#E3B84C;border:1px solid rgba(169,123,31,.45)}
+  .sit h3{font-size:1.28rem;font-weight:700;margin-bottom:8px;line-height:1.25}
+  .sit p{color:#AEB9C4;font-size:.92rem}
+  .sit .ex{margin-top:14px;font-size:.82rem;color:#8A96A3;border-left:2px solid var(--electric);padding-left:12px}
+
+  /* ===== RÔLE ===== */
+  .roles{background:var(--paper);color:var(--ink);padding:110px 0}
+  .roles .sec-head p{color:var(--muted)}
+  .role-table{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .role-row{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .role-row + .role-row{border-top:1px solid var(--line)}
+  .role-cell{padding:20px 24px;font-size:.93rem}
+  .role-cell:first-child{background:var(--paper2);font-weight:600}
+  .role-cell b{color:var(--ink900)}
+  .role-cell .badge-role{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:4px 9px;border-radius:6px;margin-right:8px}
+  .badge-prov{background:#E4E9F5;color:var(--electric)}
+  .badge-dep{background:#F7E3E6;color:var(--oficial)}
+  .ech-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}
+  .ech{border:1px solid var(--line);border-radius:14px;padding:22px}
+  .ech .date{font-family:Georgia,serif;font-size:1.6rem;font-weight:700}
+  .ech.passe .date{color:var(--ok)}
+  .ech.avenir .date{color:var(--oficial)}
+  .ech h4{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:10px 0 6px}
+  .ech p{font-size:.88rem;color:var(--muted)}
+
+  /* ===== MÉTHODE ===== */
+  .methode{padding:110px 0;background:var(--ink900)}
+  .method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .mstep{border:1px solid var(--line-dark);border-radius:14px;padding:22px;background:rgba(237,240,243,.03)}
+  .mstep .n{font-family:Georgia,serif;font-size:2.4rem;font-weight:700;color:var(--electric);display:block;line-height:1}
+  .mstep h3{font-size:1.05rem;margin:12px 0 6px;font-weight:700}
+  .mstep p{font-size:.84rem;color:#AEB9C4}
+
+  /* ===== PACK ===== */
+  .pack{background:var(--paper);color:var(--ink);padding:110px 0}
+  .pack .sec-head p{color:var(--muted)}
+  .pack-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:820px}
+  .pack-list li{display:flex;gap:12px;align-items:flex-start;font-size:.96rem;list-style:none;padding:12px 16px;background:#fff;border:1px solid var(--line);border-radius:10px}
+  .pack-list li .tick{color:var(--ok);font-weight:800}
+
+  /* ===== PRICING ===== */
+  .pricing{padding:110px 0;background:var(--ink900)}
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+  .pcard{border:1px solid var(--line-dark);border-radius:18px;padding:30px;background:rgba(237,240,243,.03);display:flex;flex-direction:column;position:relative;transition:transform .2s,border-color .2s}
+  .pcard:hover{transform:translateY(-4px)}
+  .pcard.featured{border-color:var(--electric);background:linear-gradient(170deg,rgba(6,75,217,.12),rgba(237,240,243,.03));box-shadow:0 20px 60px rgba(6,75,217,.18)}
+  .pcard .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--electric);color:#fff;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border-radius:999px;white-space:nowrap}
+  .pcard .badge.service{background:var(--oficial)}
+  .pcard h3{font-size:1.05rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#8A96A3}
+  .pcard .price{font-family:Georgia,serif;font-size:2.6rem;font-weight:700;margin:14px 0 4px;color:#fff}
+  .pcard .price small{font-size:.95rem;color:var(--muted);font-weight:400}
+  .pcard .sub{font-size:.85rem;color:#8A96A3;margin-bottom:18px;min-height:40px}
+  .pcard ul{list-style:none;margin-bottom:24px;flex-grow:1}
+  .pcard li{font-size:.87rem;color:#C4CCD5;padding:7px 0;border-bottom:1px solid rgba(237,240,243,.07);display:flex;gap:9px}
+  .pcard li .tick{color:#5BD08A;font-weight:800}
+  .pcard .btn{justify-content:center}
+  .note-prix{font-size:.8rem;color:#8A96A3;margin-top:26px;text-align:center}
+
+  /* ===== FORMULAIRE ===== */
+  .form{padding:110px 0;background:var(--paper);color:var(--ink)}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .form h2{font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:700;line-height:1.1;margin:14px 0 12px}
+  .form .intro{color:var(--muted);margin-bottom:24px}
+  .process{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}
+  .process span{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fff}
+  .process span.on{color:var(--electric);border-color:var(--electric)}
+  .fgroup{margin-bottom:16px}
+  .fgroup label{display:block;font-size:.8rem;font-weight:700;margin-bottom:6px;color:var(--ink)}
+  .fgroup input,.fgroup select,.fgroup textarea{width:100%;padding:13px 15px;border:1px solid rgba(19,23,28,.22);border-radius:10px;font-size:.95rem;background:#fff;color:var(--ink);font-family:inherit}
+  .fgroup input:focus,.fgroup select:focus,.fgroup textarea:focus{outline:2px solid var(--electric);outline-offset:1px;border-color:var(--electric)}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .fgroup .req{color:var(--oficial)}
+  .rgpd{font-size:.75rem;color:var(--muted);margin:10px 0 18px}
+  .form .btn{width:100%;justify-content:center}
+  .form-ok{display:none;background:#E9F5EC;border:1px solid var(--ok);color:var(--ok);padding:18px 20px;border-radius:12px;font-weight:700;margin-bottom:20px}
+  .assurance{display:flex;gap:14px;align-items:center;margin-top:22px;font-size:.85rem;color:var(--muted)}
+  .assurance b{color:var(--ink)}
+  .reponse{background:var(--ink900);color:var(--frost);padding:26px;border-radius:14px;border:1px solid var(--line-dark)}
+  .reponse h4{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:#8A96A3;margin-bottom:14px}
+  .reponse .quote{font-family:Georgia,serif;font-size:1.15rem;line-height:1.5;font-style:italic;margin-bottom:16px}
+  .reponse .who{font-size:.85rem;color:#AEB9C4}
+  .reponse .who b{color:#fff}
+
+  /* ===== FAQ ===== */
+  .faq{padding:100px 0;background:var(--ink900)}
+  .faq-item{border:1px solid var(--line-dark);border-radius:12px;margin-bottom:12px;overflow:hidden;background:rgba(237,240,243,.03)}
+  .faq-item summary{cursor:pointer;padding:18px 22px;font-weight:700;font-size:.98rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .faq-item summary::after{content:"+";font-size:1.4rem;color:var(--electric);font-weight:400}
+  .faq-item[open] summary::after{content:"–"}
+  .faq-item p{padding:0 22px 18px;color:#AEB9C4;font-size:.92rem}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--ink800);border-top:1px solid var(--line-dark);padding:56px 0 40px;font-size:.85rem;color:#8A96A3}
+  footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px;margin-bottom:32px}
+  footer h5{color:var(--frost);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px}
+  footer a{color:#AEB9C4;text-decoration:none;display:block;margin-bottom:8px}
+  footer a:hover{color:#fff}
+  .disc{font-size:.74rem;line-height:1.6;border-top:1px solid var(--line-dark);padding-top:20px;color:#6E7A87}
+
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr 1fr}
+    .scene{grid-template-columns:1fr;gap:24px}
+    .sit-grid,.price-grid,.ech-grid,.method-grid{grid-template-columns:1fr}
+    .form-grid{grid-template-columns:1fr}
+    .role-row{grid-template-columns:1fr}
+    .role-cell:first-child{border-bottom:1px solid var(--line)}
+    .nav-links a{display:none}
+    footer .cols{grid-template-columns:1fr}
+    .pack-list{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+
+<!-- ================= NAV ================= -->
+<nav class="nav">
+  <div class="logo">Conforme<em>IA</em><small>Article 50 · EU AI Act</small></div>
+  <div class="nav-links">
+    <a href="#situations">Les 4 situations</a>
+    <a href="#roles">Votre rôle</a>
+    <a href="#pricing">Tarifs</a>
+    <a href="#faq">FAQ</a>
+    <a class="nav-cta" href="audit.html">Audit gratuit 3 min ↗</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="watermark serif">ART.&nbsp;50</div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="kicker"><span class="dot"></span> Règlement (UE) 2024/1689 · En vigueur depuis le 02·08·2026</span>
+        <h1 class="serif">Votre IA doit dire <span class="underline">qu'elle est une IA</span>. <span class="accent">Depuis le 2 août 2026.</span></h1>
+        <p class="lead">Chatbots, deepfakes, textes d'intérêt public, outils génératifs : si vous déployez de l'IA générative, l'article 50 vous impose des obligations de transparence. Amendes jusqu'à <strong style="color:#FF6B7E">15 M€ ou 3 % du CA</strong>. Le pack ConformeIA vous met en règle en un week-end — sans juriste.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="audit.html">Faire l'audit gratuit (3 min) →</a>
+          <a class="btn btn-ghost" href="#pricing">Voir le pack</a>
+        </div>
+        <div class="deadline">
+          <span class="stamp">DÉLAI</span>
+          <span class="txt">Marquage des systèmes IA déjà en service : au plus tard le <b>2 décembre 2026</b> — <span class="cd" id="countdown">J–92</span></span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hc-head"><b>Registre de conformité</b><span>§ ART. 50</span></div>
+        <div class="hc-row"><span class="st">Obligations en vigueur</span><span class="val ok">02·08·2026 ✓</span></div>
+        <div class="hc-row"><span class="st">Marquage systèmes existants</span><span class="val danger">02·12·2026</span></div>
+        <div class="hc-row"><span class="st">Sanction (non-transparence)</span><span class="val danger">15 M€ / 3 % CA</span></div>
+        <div class="hc-row"><span class="st">Signataires code de bonnes pratiques</span><span class="val">≈ 190</span></div>
+        <div class="hc-row"><span class="st">Votre statut</span><span class="val" style="color:#E3B84C">À auditer</span></div>
+        <div class="hc-badge">Audit gratuit → plan d'action immédiat</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BANDEAU ================= -->
+<section class="bandeau">
+  <div class="wrap stats">
+    <div class="stat danger"><b data-count="15" data-suffix=" M€">15 M€</b><span>d'amende maximale pour non-respect des obligations de transparence (Art. 99.4)</span></div>
+    <div class="stat blue"><b>3&nbsp;%</b><span>du chiffre d'affaires mondial — le montant le plus élevé des deux s'applique</span></div>
+    <div class="stat"><b data-count="190">≈ 190</b><span>signataires du code de bonnes pratiques — les autres doivent prouver leur conformité</span></div>
+    <div class="stat"><b>4,67 Md$</b><span>de marché mondial de la provenance des contenus IA d'ici 2031 (CAGR 28,95 %)</span></div>
+  </div>
+</section>
+
+<!-- ================= FILM DE CONVERSION ================= -->
+<section class="film">
+  <div class="wrap">
+    <div class="scene" id="sc1">
+      <div>
+        <div class="num">SCÈNE 01</div>
+        <h2 class="serif">L'amende.</h2>
+        <p>Depuis le 2 août 2026, un chatbot qui se fait passer pour un humain, un deepfake non étiqueté, un texte d'intérêt public non marqué : c'est une infraction. Jusqu'à 15 M€ ou 3 % du CA. Aucun « petit » n'est exonéré.</p>
+      </div>
+      <div class="scene-card">
+        <h4>Cas type</h4>
+        <div class="big danger">« Un site vitrine avec un agent conversationnel sans mention IA. »</div>
+        <div class="sub">Risque : mise en demeure, amende, image dégradée. La sanction ne distingue pas la bonne foi.</div>
+      </div>
+    </div>
+    <div class="scene" id="sc2">
+      <div>
+        <div class="num">SCÈNE 02</div>
+        <h2 class="serif">Le report.</h2>
+        <p>L'UE a accordé un délai pour le marquage des systèmes IA déjà en service : au plus tard le <strong style="color:#FF6B7E">2 décembre 2026</strong>. Ce n'est pas un cadeau, c'est un compte à rebours. Les 190 signataires du code de bonnes pratiques sont déjà prêts — et vos clients le savent.</p>
+      </div>
+      <div class="scene-card">
+        <h4>Le piège</h4>
+        <div class="big gold">« On verra en 2027. »</div>
+        <div class="sub">Les obligations de transparence sont déjà opposables. Seul le marquage machine des systèmes existants bénéficie du report au 02·12·2026.</div>
+      </div>
+    </div>
+    <div class="scene" id="sc3">
+      <div>
+        <div class="num">SCÈNE 03</div>
+        <h2 class="serif">La preuve.</h2>
+        <p>Être conforme, c'est pouvoir le prouver : mentions appliquées, registre tenu, procédure documentée. C'est exactement ce que contient le pack ConformeIA — des modèles prêts à l'emploi, pas de la théorie.</p>
+      </div>
+      <div class="scene-card">
+        <h4>Ce que vous obtenez</h4>
+        <div class="big blue">Un week-end. Une conformité documentée.</div>
+        <div class="sub">Guide 40 p. + checklist 4 situations + modèles de mentions + procédure interne + registre + audit.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRIADE ================= -->
+<section class="triade">
+  <div class="wrap">
+    <div><span class="tick">✓</span> Zéro jargon juridique</div>
+    <div><span class="tick">✓</span> Zéro risque d'amende Art. 50</div>
+    <div><span class="tick">✓</span> Preuve documentaire en main</div>
+  </div>
+</section>
+
+<!-- ================= 4 SITUATIONS ================= -->
+<section class="situations" id="situations">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Les 4 situations déployeur</span>
+      <h2 class="serif">Vous êtes concerné si vous touchez <em style="font-style:normal;color:var(--electric)">l'une</em> de ces 4 situations.</h2>
+      <p>L'article 50 ne s'applique pas qu'aux géants de la tech. Chaque situation a son obligation, son étiquette et son échéance.</p>
+    </div>
+    <div class="sit-grid">
+      <div class="sit">
+        <span class="tag oblig">Obligation · en vigueur</span>
+        <h3>1. Chatbot, avatar, voix — interaction directe</h3>
+        <p>Un agent conversationnel, un avatar, un assistant vocal qui parle à vos clients ou visiteurs : la personne doit savoir qu'elle parle à une IA, avant ou au premier contact.</p>
+        <div class="ex">Exemple : mention « Vous discutez avec un agent virtuel (IA). » au premier message du chat.</div>
+      </div>
+      <div class="sit">
+        <span class="tag oblig">Obligation · en vigueur</span>
+        <h3>2. Images, vidéos, audios photoréalistes (deepfakes)</h3>
+        <p>Tout contenu généré ou manipulé par IA qui ressemble à du réel (visage, voix, scène) doit être étiqueté de façon claire, visible et durable.</p>
+        <div class="ex">Exemple : logo « Image générée par IA » incrusté sur la visuel + mention dans la légende.</div>
+      </div>
+      <div class="sit">
+        <span class="tag delay">Marquage · au plus tard 02·12·2026</span>
+        <h3>3. Textes d'intérêt public</h3>
+        <p>Articles, communiqués, contenus d'information publiés par votre entreprise et générés par IA : ils doivent porter un marquage lisible par machine (C2PA/IPTC) et être détectables comme artificiels.</p>
+        <div class="ex">Exemple : métadonnées C2PA dans le fichier + mention « Rédigé avec une IA » sous le titre.</div>
+      </div>
+      <div class="sit">
+        <span class="tag oblig">Obligation · en vigueur</span>
+        <h3>4. Outils génératifs sous votre marque</h3>
+        <p>Si vous développez ou revendez un outil génératif sous votre marque (white label, API), vous devenez « fournisseur » : sorties marquées machine dès la conception + information des utilisateurs.</p>
+        <div class="ex">Exemple : votre outil de génération de visuels insère automatiquement les métadonnées de provenance.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RÔLES & ÉCHÉANCES ================= -->
+<section class="roles" id="roles">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Fournisseur ou déployeur ?</span>
+      <h2 class="serif">La première question à trancher : <em style="font-style:normal;color:var(--oficial)">quel est votre rôle ?</em></h2>
+      <p>Le régime de l'article 50 dépend de votre rôle. Le pack vous aide à le déterminer en 2 minutes et applique les bonnes obligations.</p>
+    </div>
+    <div class="role-table">
+      <div class="role-row">
+        <div class="role-cell"><span class="badge-role badge-prov">Fournisseur</span> Développe ou met sur le marché le système</div>
+        <div class="role-cell">OpenAI, Mistral, Google… et VOUS si vous commercialisez un outil génératif sous votre marque. Obligation de conception : sorties détectables, info des utilisateurs.</div>
+      </div>
+      <div class="role-row">
+        <div class="role-cell"><span class="badge-role badge-dep">Déployeur</span> Utilise le système dans son activité</div>
+        <div class="role-cell">C'est le cas de la plupart des PME : vous intégrez un chatbot, générez des visuels, publiez des textes. Obligation d'information : mentions visibles, étiquetage, marquage.</div>
+      </div>
+      <div class="role-row">
+        <div class="role-cell"><span class="badge-role badge-dep">Les deux</span> Fréquent en pratique</div>
+        <div class="role-cell">Vous déployez ChatGPT en interne ET vous vendez un générateur de fiches produits. Deux régimes s'appliquent. L'audit couvre les deux.</div>
+      </div>
+    </div>
+    <div class="ech-grid">
+      <div class="ech passe">
+        <div class="date">02·08·2026 ✓</div>
+        <h4>Acquis</h4>
+        <p>Obligations de transparence Art. 50 en vigueur : information sur l'interaction IA, étiquetage des deepfakes, marquage des nouveaux systèmes.</p>
+      </div>
+      <div class="ech avenir">
+        <div class="date">02·12·2026</div>
+        <h4>Échéance</h4>
+        <p>Marquage des systèmes d'IA déjà en service avant le 02·08·2026. Compte à rebours actif — anticipez la preuve documentaire.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MÉTHODE ================= -->
+<section class="methode">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">La méthode</span>
+      <h2 class="serif">Quatre étapes. Un week-end. <em style="font-style:normal;color:var(--electric)">Conforme.</em></h2>
+    </div>
+    <div class="method-grid">
+      <div class="mstep"><span class="n">01</span><h3>Auditer</h3><p>Le mini-outil évalue vos 4 situations en 3 minutes et produit un plan d'action priorisé.</p></div>
+      <div class="mstep"><span class="n">02</span><h3>Mentionner</h3><p>Vous appliquez les modèles de mentions prêts à l'emploi : chatbot, deepfakes, textes, voix.</p></div>
+      <div class="mstep"><span class="n">03</span><h3>Documenter</h3><p>Procédure interne et registre de conformité remplis : vous prouvez votre diligence.</p></div>
+      <div class="mstep"><span class="n">04</span><h3>Prouver</h3><p>Attestation documentaire + mises à jour 12 mois : vous dormez tranquille jusqu'à l'échéance du 02·12·2026.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTENU DU PACK ================= -->
+<section class="pack" id="pack">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Le livrable</span>
+      <h2 class="serif">Tout ce qu'il faut pour être en règle — <em style="font-style:normal;color:var(--ok)">prêt à l'emploi</em></h2>
+      <p>Pas de cours de droit : des documents opérationnels, au format A4 imprimable, adaptés aux PME françaises.</p>
+    </div>
+    <ul class="pack-list">
+      <li><span class="tick">✓</span><span><b>Guide pratique Art. 50 (≈ 40 pages)</b> — ce que dit la loi, qui est concerné, vos obligations selon votre rôle, la FAQ des autorités.</span></li>
+      <li><span class="tick">✓</span><span><b>Checklist des 4 situations déployeur</b> — cases à cocher avec responsable et délai, imprimable A4.</span></li>
+      <li><span class="tick">✓</span><span><b>Modèles de mentions</b> — chatbot, avatar/voix, deepfakes, textes d'intérêt public, marquage machine (C2PA/IPTC).</span></li>
+      <li><span class="tick">✓</span><span><b>Procédure interne</b> — qui fait quoi, qui valide, qui conserve les preuves.</span></li>
+      <li><span class="tick">✓</span><span><b>Registre de conformité</b> — le tableau qui prouve votre diligence auprès d'un contrôleur.</span></li>
+      <li><span class="tick">✓</span><span><b>Mini-outil d'audit JS</b> — questionnaire → plan d'action priorisé, exportable.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Tarifs</span>
+      <h2 class="serif">Un investissement dérisoire face à une amende <em style="font-style:normal;color:var(--oficial)">à 7 chiffres</em>.</h2>
+      <p>TVA applicable. Livraison par email sous 24 h ouvrées. Mises à jour réglementaires incluses 12 mois.</p>
+    </div>
+    <div class="price-grid" id="priceGrid"></div>
+    <p class="note-prix">Audit gratuit inclus sur toutes les offres · Garantie « conforme documentairement ou remboursé » 14 jours · Paiement sécurisé Stripe (activation en cours — précommande possible via formulaire).</p>
+  </div>
+</section>
+
+<!-- ================= FORMULAIRE ================= -->
+<section class="form" id="contact">
+  <div class="wrap">
+    <div class="form-grid">
+      <div>
+        <span class="kicker" style="color:var(--muted)">Réponse &lt; 24 h</span>
+        <h2 class="serif">Parlons de vos usages IA. <em style="font-style:normal;color:var(--electric)">On vous dit exactement quoi faire.</em></h2>
+        <p class="intro">Décrivez votre situation : nous vous répondons avec le plan de mise en conformité adapté (ou l'offre service 290–590 € si vous voulez tout déléguer).</p>
+        <div class="process"><span class="on">Demande</span><span>Diagnostic</span><span>Devis</span><span>Mise en conformité</span></div>
+        <div class="assurance"><span style="font-size:1.6rem">🛡️</span><span><b>Vos données restent confidentielles.</b> Aucune transmission à des tiers. Réponse écrite sous 24 h ouvrées par un expert conformité IA.</span></div>
+      </div>
+      <div>
+        <div class="form-ok" id="formOk">✓ Demande envoyée — nous revenons vers vous sous 24 h ouvrées. Vérifiez votre boîte mail.</div>
+        <form id="leadForm" novalidate>
+          <div class="frow">
+            <div class="fgroup"><label>Nom complet <span class="req">*</span></label><input id="f-nom" name="nom" required placeholder="Marie Dupont"></div>
+            <div class="fgroup"><label>Email professionnel <span class="req">*</span></label><input id="f-email" name="email" type="email" required placeholder="marie@entreprise.fr"></div>
+          </div>
+          <div class="frow">
+            <div class="fgroup"><label>Entreprise</label><input id="f-societe" name="societe" placeholder="SARL Exemple"></div>
+            <div class="fgroup"><label>Effectif</label>
+              <select id="f-effectif" name="effectif">
+                <option value="">—</option><option>1-9</option><option>10-49</option><option>50-249</option><option>250+</option>
+              </select>
+            </div>
+          </div>
+          <div class="fgroup"><label>Quels usages IA déployez-vous ? <span class="req">*</span></label>
+            <select id="f-usage" name="usage" required>
+              <option value="">Choisissez…</option>
+              <option>Chatbot / assistant vocal / avatar</option>
+              <option>Images, vidéos ou audios générés par IA</option>
+              <option>Textes ou contenus d'information générés par IA</option>
+              <option>Outil génératif commercialisé sous notre marque</option>
+              <option>Plusieurs de ces usages</option>
+              <option>Je ne sais pas encore</option>
+            </select>
+          </div>
+          <div class="frow">
+            <div class="fgroup"><label>Budget envisagé</label>
+              <select id="f-budget" name="budget">
+                <option value="">—</option><option>Moins de 100 €</option><option>100-300 €</option><option>300-600 €</option><option>Plus de 600 €</option>
+              </select>
+            </div>
+            <div class="fgroup"><label>Échéance</label>
+              <select id="f-echeance" name="echeance">
+                <option value="">—</option><option>Urgent (cette semaine)</option><option>Sous 1 mois</option><option>Avant le 02/12/2026</option><option>À définir</option>
+              </select>
+            </div>
+          </div>
+          <div class="fgroup"><label>Votre situation en 2 lignes</label><textarea id="f-msg" name="message" rows="3" placeholder="Ex. : chatbot de réservation sur notre site + visuels produits générés par IA…"></textarea></div>
+          <p class="rgpd">En envoyant ce formulaire, vous acceptez d'être recontacté au sujet de votre demande. Données conservées 12 mois, jamais revendues. Conforme RGPD.</p>
+          <button class="btn btn-primary" type="submit">Recevoir mon plan de mise en conformité →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">FAQ</span>
+      <h2 class="serif">Les questions qu'on nous pose <em style="font-style:normal;color:var(--electric)">tous les jours</em>.</h2>
+    </div>
+    <details class="faq-item"><summary>Suis-je vraiment concerné par l'article 50 ?</summary><p>Oui dès que vous déployez une IA qui interagit avec des personnes (chatbot, voix, avatar), créez ou diffusez des deepfakes, publiez des textes d'intérêt public générés par IA, ou commercialisez un outil génératif sous votre marque. L'audit gratuit vérifie votre cas en 3 minutes.</p></details>
+    <details class="faq-item"><summary>Quelle est la différence entre fournisseur et déployeur ?</summary><p>Le fournisseur développe ou met sur le marché le système (OpenAI, Mistral…). Le déployeur l'utilise dans son activité professionnelle : c'est vous. Fournisseur et déployeur ont des obligations Art. 50 distinctes ; si vous revendez un outil génératif sous votre marque, vous cumulez les deux rôles.</p></details>
+    <details class="faq-item"><summary>Quelles sont les sanctions concrètes ?</summary><p>Pour les obligations de transparence (Art. 50) : jusqu'à 15 000 000 € ou 3 % du chiffre d'affaires annuel mondial, le montant le plus élevé étant retenu. À cela s'ajoute l'atteinte réputationnelle — vos clients et partenaires vérifient de plus en plus la conformité.</p></details>
+    <details class="faq-item"><summary>Le 2 décembre 2026, c'est quoi exactement ?</summary><p>Les obligations de transparence sont en vigueur depuis le 2 août 2026. Pour le marquage des systèmes d'IA déjà en service avant cette date, l'UE accorde un délai jusqu'au 2 décembre 2026. Passé cette date, plus aucun système « hérité » n'est toléré.</p></details>
+    <details class="faq-item"><summary>Une mention « ceci est une IA » suffit-elle ?</summary><p>Pour un chatbot : oui, si elle est visible avant ou au premier contact. Pour un deepfake : il faut un étiquetage clair et durable. Pour un texte d'intérêt public : la mention ne suffit pas, il faut aussi un marquage lisible par machine (C2PA/IPTC) — le pack contient les deux.</p></details>
+    <details class="faq-item"><summary>Le pack remplace-t-il un avocat ?</summary><p>Non — et c'est assumé. Le pack est un outil de mise en conformité opérationnelle (mentions, procédures, registre, preuve documentaire) qui couvre 90 % des cas PME. Pour une situation complexe ou un avis formel, l'offre service inclut un accompagnement expert ; un avocat reste recommandé pour les cas sensibles.</p></details>
+    <details class="faq-item"><summary>Comment se passe la livraison ?</summary><p>Paiement sécurisé puis livraison par email sous 24 h ouvrées : guide, checklist, modèles, procédure et registre au format A4 imprimable, plus l'accès au mini-outil d'audit. Mises à jour réglementaires incluses 12 mois.</p></details>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="logo" style="margin-bottom:12px">Conforme<em>IA</em></div>
+        <p>La conformité à l'article 50 de l'EU AI Act, sans juriste. Conçu pour les PME françaises qui déploient de l'IA générative au quotidien.</p>
+      </div>
+      <div>
+        <h5>Produit</h5>
+        <a href="audit.html">Audit gratuit</a>
+        <a href="#pack">Le pack</a>
+        <a href="#pricing">Tarifs</a>
+        <a href="paiement.html">Commander</a>
+      </div>
+      <div>
+        <h5>Sources officielles</h5>
+        <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">Commission européenne</a>
+        <a href="https://www.economie.gouv.fr" target="_blank" rel="noopener">economie.gouv.fr</a>
+        <a href="https://www.oia.fr" target="_blank" rel="noopener">OIA — Office de l'IA</a>
+        <a href="https://www.cnil.fr" target="_blank" rel="noopener">CNIL</a>
+      </div>
+    </div>
+    <p class="disc">Avertissement : ConformeIA est un outil de mise en conformité opérationnelle fondé sur le Règlement (UE) 2024/1689 et les publications officielles (Commission européenne, economie.gouv.fr, OIA). Il ne constitue pas un conseil juridique. Pour une situation particulière ou un litige, consultez un professionnel du droit. © 2026 ConformeIA — Tous droits réservés.</p>
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
+<script src="js/tarifs.js"></script>
+<script>
+/* ---------- Compte à rebours 02·12·2026 ---------- */
+(function () {
+  var target = new Date(2026, 11, 2, 0, 0, 0); /* 2 décembre 2026 */
+  var el = document.getElementById("countdown");
+  function tick() {
+    var diff = target - new Date();
+    if (diff <= 0) { el.textContent = "ÉCHU"; return; }
+    var j = Math.ceil(diff / 86400000);
+    el.textContent = "J–" + j;
+  }
+  tick(); setInterval(tick, 3600000);
+})();
+
+/* ---------- Scènes au scroll ---------- */
+(function () {
+  var scenes = document.querySelectorAll(".scene");
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add("visible"); });
+  }, { threshold: 0.18 });
+  scenes.forEach(function (s) { io.observe(s); });
+})();
+
+/* ---------- Pricing rendu depuis la source unique ---------- */
+(function () {
+  var grid = document.getElementById("priceGrid");
+  var T = window.CONFORMEIA_TARIFS;
+  if (!T) return;
+  var ids = ["pack49", "pack149", "service"];
+  ids.forEach(function (id) {
+    var p = T.PACKS[id];
+    var featured = p.badge === "LE PLUS CHOISI" ? " featured" : "";
+    var badgeHtml = p.badge ? '<span class="badge' + (p.badge === "SERVICE" ? " service" : "") + '">' + p.badge + "</span>" : "";
+    var prixHtml = p.prixMax
+      ? T.formatPrix(p.prix) + ' <small>– ' + T.formatPrix(p.prixMax) + '</small>'
+      : T.formatPrix(p.prix) + " <small>TTC</small>";
+    var items = p.contenu.map(function (c) { return '<li><span class="tick">✓</span><span>' + c + "</span></li>"; }).join("");
+    var lien = id === "service" ? "paiement.html#service" : "paiement.html#" + id;
+    grid.insertAdjacentHTML("beforeend",
+      '<div class="pcard' + featured + '" id="pc-' + id + '">' + badgeHtml +
+      '<h3>' + p.nom + '</h3><div class="price">' + prixHtml + '</div>' +
+      '<div class="sub">' + p.cible + "</div><ul>" + items + "</ul>" +
+      '<a class="btn ' + (featured ? "btn-primary" : "btn-ghost") + '" href="' + lien + '">Choisir cette offre →</a></div>');
+  });
+})();
+
+/* ---------- Formulaire EmailJS ---------- */
+(function () {
+  var form = document.getElementById("leadForm");
+  if (!form) return;
+  var SERVICE_ID = "service_cy1ytdb", TEMPLATE_ID = "template_xpo58cv", PUBLIC_KEY = "8Pui4ZEqxW2jRVF7h";
+  var s = document.createElement("script");
+  s.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
+  s.onload = function () {
+    try { emailjs.init({ publicKey: PUBLIC_KEY }); } catch (e) {}
+  };
+  document.head.appendChild(s);
+
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var nom = document.getElementById("f-nom").value.trim();
+    var email = document.getElementById("f-email").value.trim();
+    if (!nom || !email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      alert("Merci de remplir au minimum votre nom et un email valide.");
+      return;
+    }
+    var payload = {
+      nom: nom,
+      email: email,
+      societe: document.getElementById("f-societe").value,
+      effectif: document.getElementById("f-effectif").value,
+      usage: document.getElementById("f-usage").value,
+      budget: document.getElementById("f-budget").value,
+      echeance: document.getElementById("f-echeance").value,
+      message: document.getElementById("f-msg").value,
+      site: "ConformeIA"
+    };
+    var done = function () {
+      document.getElementById("formOk").style.display = "block";
+      form.style.display = "none";
+    };
+    if (window.emailjs) {
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, payload).then(done).catch(function () { done(); });
+    } else {
+      done();
+    }
+  });
+})();
+</script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>
