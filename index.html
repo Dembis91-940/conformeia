@@ -531,7 +531,7 @@
       <p>TVA applicable. Livraison par email sous 24 h ouvrées. Mises à jour réglementaires incluses 12 mois.</p>
     </div>
     <div class="price-grid" id="priceGrid"></div>
-    <p class="note-prix">Audit gratuit inclus sur toutes les offres · Garantie « conforme documentairement ou remboursé » 14 jours · Paiement sécurisé Stripe (activation en cours — précommande possible via formulaire).</p>
+    <p class="note-prix">Audit gratuit inclus sur toutes les offres · Garantie « conforme documentairement ou remboursé » 14 jours · Paiement sécurisé Stripe · Livraison par email sous 24 h ouvrées.</p>
   </div>
 </section>
 
@@ -690,12 +690,13 @@
       ? T.formatPrix(p.prix) + ' <small>– ' + T.formatPrix(p.prixMax) + '</small>'
       : T.formatPrix(p.prix) + " <small>TTC</small>";
     var items = p.contenu.map(function (c) { return '<li><span class="tick">✓</span><span>' + c + "</span></li>"; }).join("");
-    var lien = id === "service" ? "paiement.html#service" : "paiement.html#" + id;
+    var STRIPE_DIRECT = { pack49: "https://buy.stripe.com/4gM6oJ9b05TTaDrdGsfrW0k", pack149: "https://buy.stripe.com/fZuaEZevkdmlcLzbykfrW0l", service: "https://buy.stripe.com/dRmaEZaf4gyxfXLeKwfrW0m" };
+    var lien = STRIPE_DIRECT[id];
     grid.insertAdjacentHTML("beforeend",
       '<div class="pcard' + featured + '" id="pc-' + id + '">' + badgeHtml +
       '<h3>' + p.nom + '</h3><div class="price">' + prixHtml + '</div>' +
       '<div class="sub">' + p.cible + "</div><ul>" + items + "</ul>" +
-      '<a class="btn ' + (featured ? "btn-primary" : "btn-ghost") + '" href="' + lien + '">Choisir cette offre →</a></div>');
+      '<a class="btn ' + (featured ? "btn-primary" : "btn-ghost") + '" href="' + lien + '" target="_blank" rel="noopener">Acheter — paiement sécurisé →</a></div>');
   });
 })();
 
