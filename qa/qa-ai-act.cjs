@@ -15,7 +15,7 @@ function ok(msg) { console.log("  ✓ " + msg); }
 
 /* ---------- 1. Fichiers requis ---------- */
 const REQUIRED = [
-  "index.html", "audit.html", "paiement.html",
+  "index.html", "audit.html", "paiement.html", "blog-digital-omnibus.html",
   "js/tarifs.js", "js/audit-engine.js", "js/chatbot.js",
   "pack/guide-conformite-art50.html", "pack/guide-conformite-art50.md",
   "pack/checklist-4-situations.html", "pack/modeles-mentions.html",
@@ -29,7 +29,7 @@ REQUIRED.forEach((f) => {
 
 /* ---------- 2. Liens internes ---------- */
 console.log("2) Liens internes");
-const htmlFiles = ["index.html", "audit.html", "paiement.html",
+const htmlFiles = ["index.html", "audit.html", "paiement.html", "blog-digital-omnibus.html",
   "pack/guide-conformite-art50.html", "pack/checklist-4-situations.html",
   "pack/modeles-mentions.html", "pack/procedure-interne.html"];
 let totalLinks = 0, broken = 0;
@@ -163,11 +163,32 @@ htmlFiles.forEach((f) => {
   lang && meta && title ? ok(f + " : lang=fr, meta description, title") : fail(f + " : structure incomplète (lang=" + lang + " meta=" + meta + " title=" + title + ")");
 });
 
+/* ---------- 6. MàJ Digital Omnibus (règl. UE 2026/1744) ---------- */
+console.log("6) Digital Omnibus présent dans la landing et le pack");
+const checksOmnibus = [
+  ["index.html", "règl. UE 2026/1744"],
+  ["index.html", "02·12·2027"],
+  ["index.html", "02·08·2028"],
+  ["index.html", "nudifier"],
+  ["index.html", "blog-digital-omnibus.html"],
+  ["blog-digital-omnibus.html", "2026/1744"],
+  ["pack/guide-conformite-art50.html", "Digital Omnibus"],
+  ["pack/guide-conformite-art50.html", "02/12/2026"],
+  ["pack/guide-conformite-art50.html", "35"],
+  ["pack/checklist-4-situations.html", "Digital Omnibus"],
+  ["pack/modeles-mentions.html", "2026/1744"],
+  ["pack/procedure-interne.html", "2026/1744"]
+];
+checksOmnibus.forEach(([f, needle]) => {
+  const html = fs.readFileSync(path.join(ROOT, f), "utf8");
+  html.includes(needle) ? ok(f + " contient « " + needle + " »") : fail(f + " ne contient pas « " + needle + " »");
+});
+
 /* ---------- Bilan ---------- */
 console.log("");
 if (failures > 0) {
   console.log("❌ QA : " + failures + " échec(s)");
   process.exit(1);
 } else {
-  console.log("✅ QA : tout est vert (" + totalLinks + " liens, " + Q + " questions, prix OK)");
+  console.log("✅ QA : tout est vert (" + totalLinks + " liens, " + Q + " questions, prix OK, Digital Omnibus présent)");
 }

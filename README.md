@@ -1,8 +1,11 @@
 # ConformeIA — Pack Conformité EU AI Act Article 50
 
 SaaS/documentaire FR : mise en conformité des PME à l'article 50 du Règlement (UE) 2024/1689
-(obligations de transparence en vigueur depuis le 02/08/2026 ; marquage des systèmes existants : 02/12/2026 ;
-sanctions jusqu'à 15 M€ ou 3 % du CA).
+(obligations de transparence en vigueur depuis le 02/08/2026 ; marquage machine Art. 50 §2 des
+systèmes déjà sur le marché avant le 02/08/2026 : 02/12/2026 ; sanctions jusqu'à 15 M€ ou 3 % du CA).
+**MàJ 06/09/2026 — Digital Omnibus (règl. UE 2026/1744) intégré** : haut risque reporté
+(Annexe III → 02/12/2027 ; Annexe I → 02/08/2028), Art. 50 NON reporté, 2 interdictions au 02/12/2026
+(« nudifier » + CSAM, 35 M€ / 7 % CA), AI literacy (Art. 4) adoucie depuis le 27/07/2026.
 
 ## Structure
 
@@ -10,6 +13,9 @@ sanctions jusqu'à 15 M€ ou 3 % du CA).
 ai-act-conformite/
 ├── index.html              Landing (3D WebGL, forge 4 étapes, film de conversion,
 │                           pricing 3 paliers, formulaire EmailJS, FAQ, SEO)
+│                           MàJ Omnibus : section Vrai/Faux + FAQ anti-report
+├── blog-digital-omnibus.html  Article sourcé « Digital Omnibus : ce qui est vraiment
+│                           reporté (et ce qui ne l'est pas) » (06/09/2026)
 ├── audit.html              Mini-outil d'audit JS : 14 questions → score + plan d'action
 ├── paiement.html           Commande (3 offres) + EmailJS + note Stripe (clé en attente)
 ├── js/

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Omnibus : ce qui est vraiment reporté (et ce qui ne l'est pas) — ConformeIA</title>
+<meta name="description" content="Règl. (UE) 2026/1744 « Digital Omnibus » : le haut risque est reporté à 2027-2028, mais l'article 50 de l'EU AI Act n'est PAS reporté. Prochaine échéance réelle : marquage machine Art. 50 §2 au 2 décembre 2026. Article sourcé, à jour au 06/09/2026.">
+<meta property="og:title" content="Digital Omnibus : ce qui est vraiment reporté (et ce qui ne l'est pas)">
+<meta property="og:description" content="Le récit « l'AI Act est reporté à 2027 » est faux pour l'article 50. Dates, interdictions, AI literacy : le point sourcé avant le 02/12/2026.">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230C1219'/%3E%3Ctext x='50' y='68' font-size='52' font-family='Georgia,serif' font-weight='bold' fill='%23F3F1EA' text-anchor='middle'%3E§%3C/text%3E%3C/svg%3E">
+<style>
+  :root{--ink900:#0C1219;--ink800:#141B24;--paper:#F3F1EA;--paper2:#EAE7DC;--ink:#13171C;--muted:#5A6470;--electric:#064BD9;--oficial:#C8102E;--ok:#0E7A3C;--gold:#8A6414;--line:rgba(19,23,28,.14);--line-dark:rgba(237,240,243,.14);--frost:#EDF0F3}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:#E9E6DC;color:var(--ink);line-height:1.66;font-size:16px}
+  .serif{font-family:Georgia,'Iowan Old Style','Palatino Linotype','Times New Roman',serif}
+  a{color:inherit}
+  .top{background:var(--ink900);color:var(--frost);padding:14px 0;border-bottom:1px solid var(--line-dark)}
+  .top .wrap{max-width:860px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .top .logo{font-weight:800;font-size:1.05rem}
+  .top .logo em{font-style:normal;color:var(--electric)}
+  .top a{color:#AEB9C4;text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+  .top a:hover{color:#fff}
+  article{max-width:860px;margin:0 auto;padding:44px 24px 90px}
+  .kicker{font-size:.7rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--oficial)}
+  h1{font-size:clamp(1.9rem,4.6vw,3rem);font-weight:700;line-height:1.12;margin:12px 0 10px;letter-spacing:-.012em}
+  .meta{color:var(--muted);font-size:.84rem;margin-bottom:28px;border-bottom:2px solid var(--ink);padding-bottom:16px}
+  h2{font-size:1.35rem;font-weight:700;margin:34px 0 10px;letter-spacing:-.005em}
+  h3{font-size:1.05rem;margin:20px 0 6px}
+  p{margin:10px 0}
+  ul,ol{margin:10px 0 10px 24px}
+  li{margin:5px 0}
+  .encadre{border:1px solid var(--line);border-left:4px solid var(--electric);background:#fff;border-radius:0 10px 10px 0;padding:16px 18px;margin:20px 0}
+  .encadre.danger{border-left-color:var(--oficial);background:#FDF6F4}
+  .encadre.ok{border-left-color:var(--ok);background:#F2F8F3}
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.9rem;background:#fff}
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+  th{background:var(--paper);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+  .vrai{color:var(--ok);font-weight:800}
+  .faux{color:var(--oficial);font-weight:800}
+  .cta{background:var(--ink900);color:var(--frost);border-radius:16px;padding:26px 28px;margin:30px 0;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+  .cta h3{font-family:Georgia,serif;font-size:1.3rem;margin:0 0 6px}
+  .cta p{color:#AEB9C4;font-size:.9rem;margin:0;max-width:480px}
+  .btn{display:inline-block;background:var(--electric);color:#fff;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:10px;font-size:.92rem}
+  .btn:hover{background:#0438A8}
+  .sources{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);margin-top:34px;padding-top:16px}
+  .sources a{color:var(--electric);text-decoration:none;word-break:break-word}
+  .sources a:hover{text-decoration:underline}
+  .note{font-size:.78rem;color:var(--muted);margin-top:14px}
+  @media(max-width:700px){article{padding:30px 18px 70px}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><div class="logo">Conforme<em>IA</em></div><a href="index.html">← Retour à l'accueil</a></div></div>
+
+<article>
+  <span class="kicker">Actualité réglementaire · 06/09/2026</span>
+  <h1 class="serif">Digital Omnibus : ce qui est vraiment reporté <span style="color:var(--oficial)">(et ce qui ne l'est pas)</span></h1>
+  <p class="meta">Règlement (UE) 2026/1744 · publié au JO le 24/07/2026 · en vigueur depuis le 27/07/2026 · lecture à jour au 06/09/2026 — 87 jours avant le 02/12/2026.</p>
+
+  <p><strong>« L'AI Act est reporté à 2027 » : c'est le récit qui circule depuis l'été 2026. Il est exact pour le régime « haut risque » — et faux pour l'article 50, celui qui touche le plus grand nombre d'entreprises.</strong> Voici le calendrier exact, sources à l'appui.</p>
+
+  <div class="encadre danger">
+    <strong>⚠️ Le point qui coûte cher :</strong> le Digital Omnibus (règl. UE 2026/1744) reporte les obligations « haut risque » (Annexe III → <strong>02/12/2027</strong> ; Annexe I → <strong>02/08/2028</strong>), mais il laisse l'article 50 <strong>intact</strong> : les obligations de transparence s'appliquent depuis le <strong>02/08/2026</strong>, sans report.
+  </div>
+
+  <h2>1. Le calendrier après le Digital Omnibus</h2>
+  <table>
+    <tr><th>Date</th><th>Ce qui s'applique</th><th>Statut</th></tr>
+    <tr><td>02/02/2025</td><td>Pratiques interdites (Art. 5) + AI literacy (Art. 4)</td><td><span class="vrai">En vigueur</span></td></tr>
+    <tr><td>02/08/2025</td><td>Obligations des modèles d'IA à usage général</td><td><span class="vrai">En vigueur</span></td></tr>
+    <tr><td><strong>02/08/2026</strong></td><td><strong>Article 50 — transparence</strong> : chatbot (informer), deepfakes (étiqueter), textes d'intérêt public (divulguer), marquage machine des nouveaux systèmes</td><td><span class="vrai">En vigueur — non reporté</span></td></tr>
+    <tr><td><strong>02/12/2026</strong></td><td><strong>Prochaine échéance réelle</strong> : marquage machine (Art. 50 §2) des systèmes génératifs déjà sur le marché avant le 02/08/2026 + <strong>2 nouvelles interdictions</strong> (Art. 5 : « nudifier », CSAM)</td><td><span class="faux">J–87</span></td></tr>
+    <tr><td>02/08/2027</td><td>Bacs à sable réglementaires nationaux (Art. 57)</td><td><span style="color:var(--gold);font-weight:800">Reporté de 1 an</span></td></tr>
+    <tr><td>02/12/2027</td><td>Haut risque « autonome » — Annexe III (recrutement, crédit, éducation, migration…)</td><td><span style="color:var(--gold);font-weight:800">Reporté depuis le 02/08/2026</span></td></tr>
+    <tr><td>02/08/2028</td><td>Haut risque « intégré » — Annexe I (dispositifs médicaux, machines, jouets, véhicules…)</td><td><span style="color:var(--gold);font-weight:800">Reporté depuis le 02/08/2027</span></td></tr>
+  </table>
+
+  <h2>2. Ce que le report ne couvre PAS</h2>
+  <p>Le report écrit dans l'article 1er du règlement 2026/1744 ne vise que le chapitre III (systèmes à haut risque). L'article 50 appartient au <strong>chapitre IV</strong> : il n'est pas dans le périmètre du report. Conséquence concrète depuis le 02/08/2026 :</p>
+  <ul>
+    <li>un chatbot qui ne dit pas qu'il est une IA est sanctionnable ;</li>
+    <li>un deepfake non étiqueté est sanctionnable ;</li>
+    <li>un texte d'intérêt public généré par IA et publié sans divulgation est sanctionnable (sauf révision éditoriale humaine assumée) ;</li>
+    <li>sanction : jusqu'à <strong>15 M€ ou 3 % du CA mondial</strong> (art. 99.4) — inchangée.</li>
+  </ul>
+  <p>Seule concession : les <strong>fournisseurs</strong> de systèmes génératifs déjà mis sur le marché avant le 02/08/2026 ont jusqu'au <strong>02/12/2026</strong> pour rendre leurs sorties marquées dans un format lisible par machine (Art. 50 §2). C'est la seule « transition » du paquet pour la transparence — et elle se termine dans 87 jours.</p>
+
+  <div class="encadre ok">
+    <strong>En pratique pour une PME :</strong> si vous utilisez des outils génératifs mis sur le marché avant le 02/08/2026, vérifiez que leur fournisseur a livré le marquage machine avant le 02/12/2026. Vos obligations de mention et d'étiquetage, elles, s'appliquent depuis le 02/08/2026 — aucun report ne les couvre.
+  </div>
+
+  <h2>3. Le Digital Omnibus a aussi <em>durci</em> le texte</h2>
+  <p>On retient le report, on oublie le durcissement. Le règlement 2026/1744 ajoute deux pratiques interdites à l'article 5, avec entrée en application au <strong>02/12/2026</strong> :</p>
+  <ul>
+    <li><strong>Applications « nudifier »</strong> (Art. 5, point (ba)) : générer ou manipuler des images, vidéos ou audios intimes non consentis de personnes réelles identifiables ;</li>
+    <li><strong>Génération de contenus pédocriminels (CSAM) par IA</strong> (Art. 5, point (bb)).</li>
+  </ul>
+  <p>Sanction : jusqu'à <strong>35 M€ ou 7 % du CA mondial</strong> (art. 99.3) — soit plus du double de la transparence. Les fournisseurs comme les déployeurs sont visés ; les outils génératifs capables de produire ces contenus doivent intégrer des garde-fous techniques (refus, filtres, modération) avant le 02/12/2026.</p>
+
+  <h2>4. AI literacy (Art. 4) : adoucie, pas supprimée</h2>
+  <p>Le Digital Omnibus réécrit l'article 4 depuis le <strong>27/07/2026</strong> : les fournisseurs et déployeurs doivent « prendre des mesures pour soutenir le développement de la culture IA » de leurs équipes — <strong>sans devoir garantir un niveau précis par personne</strong>. L'obligation, en vigueur depuis le 02/02/2025, devient une obligation de moyens : documentez vos actions de formation, c'est la preuve qui compte.</p>
+
+  <h2>5. Vrai / Faux en 30 secondes</h2>
+  <table>
+    <tr><th>Affirmation</th><th>Verdict</th></tr>
+    <tr><td>« L'AI Act est reporté à 2027, je peux attendre »</td><td><span class="faux">FAUX</span> pour l'Art. 50 — vrai uniquement pour le haut risque</td></tr>
+    <tr><td>« La prochaine échéance est le 02/12/2026 »</td><td><span class="vrai">VRAI</span> — marquage machine Art. 50 §2 + interdictions</td></tr>
+    <tr><td>« Les amendes de transparence sont reportées aussi »</td><td><span class="faux">FAUX</span> — 15 M€ / 3 % CA, applicable depuis le 02/08/2026</td></tr>
+    <tr><td>« Le Digital Omnibus n'a fait qu'alléger le texte »</td><td><span class="faux">FAUX</span> — il ajoute 2 interdictions à 35 M€ / 7 % CA</td></tr>
+    <tr><td>« L'AI literacy a disparu »</td><td><span class="faux">FAUX</span> — obligation de moyens depuis le 27/07/2026</td></tr>
+  </table>
+
+  <div class="cta">
+    <div>
+      <h3 class="serif">Votre chatbot, vos deepfakes, vos textes : en règle avant le 02/12/2026 ?</h3>
+      <p>Audit gratuit 3 minutes + pack de mise en conformité Art. 50 à jour du Digital Omnibus (guide, checklist, mentions, procédure, registre).</p>
+    </div>
+    <a class="btn" href="audit.html">Faire l'audit gratuit →</a>
+  </div>
+
+  <h2>Sources (vérifiées le 06/09/2026)</h2>
+  <div class="sources">
+    <ul>
+      <li>Règlement (UE) 2026/1744 du 8 juillet 2026 (« Digital Omnibus sur l'IA ») — texte officiel : <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj" target="_blank" rel="noopener">EUR-Lex</a></li>
+      <li>Commission européenne — FAQ AI literacy (état après Digital Omnibus) : <a href="https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers" target="_blank" rel="noopener">digital-strategy.ec.europa.eu</a></li>
+      <li>Commission européenne — Timeline officielle de mise en œuvre de l'AI Act (02/12/2027, 02/08/2028) : <a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act" target="_blank" rel="noopener">ai-act-service-desk.ec.europa.eu</a></li>
+      <li>Analyse ComplianceForge : <a href="https://complianceforge.eu/en/blog/omnibus-vii-eu-ai-act-changes" target="_blank" rel="noopener">complianceforge.eu</a></li>
+      <li>Analyse ActNavigator (tableau des dates) : <a href="https://www.actnavigator.com/eu-ai-act-omnibus" target="_blank" rel="noopener">actnavigator.com</a></li>
+      <li>Parlement européen — approbation des mesures de simplification et de l'interdiction des apps « nudifier » : <a href="https://www.europarl.europa.eu/news/en/press-room/20260611IPR45207/ai-act-ep-approves-simplification-measures-and-nudifier-app-ban" target="_blank" rel="noopener">europarl.europa.eu</a></li>
+      <li>Texte officiel de l'article 50 (Règlement 2024/1689) : <a href="https://artificialintelligenceact.eu/article/50/" target="_blank" rel="noopener">artificialintelligenceact.eu</a></li>
+    </ul>
+    <p class="note">Article d'information publié par ConformeIA. Ne constitue pas un conseil juridique. Pour une situation particulière, consultez un professionnel du droit.</p>
+  </div>
+</article>
+</body>
+</html>
