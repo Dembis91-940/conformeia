@@ -86,9 +86,17 @@
   .cta-pack{background:linear-gradient(160deg,rgba(6,75,217,.1),rgba(6,75,217,.02));border:1px solid rgba(6,75,217,.4);border-radius:16px;padding:26px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
   .cta-pack h3{font-family:Georgia,serif;font-size:1.4rem;font-weight:700}
   .cta-pack p{color:var(--muted);font-size:.9rem;margin:6px 0 0;max-width:480px}
+  .voies{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;margin:10px 0 6px}
+  .voie{background:#fff;border:1px solid rgba(19,23,28,.13);border-radius:16px;padding:24px;display:flex;flex-direction:column}
+  .voie--service{background:linear-gradient(160deg,rgba(6,75,217,.07),rgba(6,75,217,.015));border-color:rgba(6,75,217,.38)}
+  .voie-tag{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--electric);margin-bottom:10px}
+  .voie h3{font-family:Georgia,serif;font-size:1.24rem;font-weight:700;margin:0 0 9px}
+  .voie p{color:var(--muted);font-size:.88rem;line-height:1.6;margin:0 0 18px}
+  .voie .btn{align-self:flex-start;margin-top:auto}
+  .voie-note{font-size:.76rem;color:var(--muted);margin:0 0 14px}
   .print-note{font-size:.78rem;color:var(--muted);margin-top:16px}
   @media print{
-    .top,.navbtns,.cta-pack,.no-print{display:none!important}
+    .top,.navbtns,.cta-pack,.voies,.no-print{display:none!important}
     body{background:#fff}
     .qcard{break-inside:avoid;box-shadow:none}
     #resultat{display:block!important}
@@ -130,6 +138,22 @@
     <h2 class="sec-title serif">Votre plan d'action priorisé</h2>
     <div class="plan" id="rPlan"></div>
 
+    <h2 class="sec-title serif">Deux façons de traiter ces points</h2>
+    <div class="voies no-print">
+      <div class="voie">
+        <div class="voie-tag">Je le fais moi-même</div>
+        <h3 class="serif">Pack Art. 50 Express — 49 €</h3>
+        <p>Les mentions prêtes à l'emploi, la procédure interne et le registre pour chaque point de ce plan. Livré par email, vous l'appliquez vous-même dans vos outils.</p>
+        <a class="btn btn-primary" href="index.html#pricing">Voir le pack →</a>
+      </div>
+      <div class="voie voie--service">
+        <div class="voie-tag">On le fait pour moi</div>
+        <h3 class="serif">Intervention sur place — 490 €</h3>
+        <p>J'inventorie tous vos points de contact IA, je corrige la mention directement dans vos outils, et je vous remets la preuve datée. Déplacement inclus dans toute l'Île-de-France, livré en 48 h.</p>
+        <p class="voie-note">Hors Île-de-France : même méthode, en visioconférence.</p>
+        <a class="btn btn-ghost" href="https://dembis91-940.github.io/agentia/art50-idf.html">Voir l'intervention →</a>
+      </div>
+    </div>
     <div class="cta-pack no-print">
       <div>
         <h3 class="serif">Transformez ce plan en conformité réelle.</h3>

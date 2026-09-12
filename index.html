@@ -255,6 +255,24 @@
     footer .cols{grid-template-columns:1fr}
     .pack-list{grid-template-columns:1fr}
   }
+  /* ---------- Comparatif : chatbot juridique vs avocat vs nous ---------- */
+  .comp{background:#fff;border-top:1px solid rgba(19,23,28,.1);border-bottom:1px solid rgba(19,23,28,.1);color:var(--ink)}
+  .comp h2,.comp h3,.comp b,.comp strong{color:var(--ink)}
+  .comp .sec-head p{color:var(--muted)}
+  .comp .kicker{color:#8A96A3}
+  .comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:18px;margin-top:26px}
+  .comp-col{border:1px solid rgba(19,23,28,.13);border-radius:16px;padding:22px;background:var(--paper)}
+  .comp-col--nous{background:linear-gradient(160deg,rgba(6,75,217,.075),rgba(6,75,217,.015));border-color:rgba(6,75,217,.4);box-shadow:0 14px 34px -22px rgba(6,75,217,.55)}
+  .comp-col h3{font-family:Georgia,serif;font-size:1.08rem;margin:0 0 4px}
+  .comp-col .prix-c{font-size:.82rem;font-weight:700;color:var(--muted);letter-spacing:.02em;margin-bottom:14px;display:block}
+  .comp-col--nous .prix-c{color:var(--electric)}
+  .comp-col ul{list-style:none;padding:0;margin:0}
+  .comp-col li{font-size:.87rem;line-height:1.55;color:var(--muted);padding-left:22px;position:relative;margin-bottom:9px}
+  .comp-col li::before{position:absolute;left:0;top:0;font-weight:700}
+  .comp-col li.oui::before{content:"✓";color:var(--ok)}
+  .comp-col li.non::before{content:"✕";color:var(--officiel)}
+  .comp-col li.non{color:#5F6771}
+  .comp-note{font-size:.85rem;color:var(--muted);margin-top:22px;max-width:760px;line-height:1.65}
 </style>
 </head>
 <body>
@@ -500,6 +518,53 @@
       <div class="mstep"><span class="n">03</span><h3>Documenter</h3><p>Procédure interne et registre de conformité remplis : vous prouvez votre diligence.</p></div>
       <div class="mstep"><span class="n">04</span><h3>Prouver</h3><p>Attestation documentaire + mises à jour 12 mois : vous dormez tranquille jusqu'à l'échéance du 02·12·2026.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- ================= COMPARATIF ================= -->
+<section class="comp" id="comparatif">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Avant de payer</span>
+      <h2 class="serif">Un chatbot juridique peut vous répondre. <em style="font-style:normal;color:var(--electric)">Il ne peut pas vous couvrir.</em></h2>
+      <p>Trois façons de traiter l'article 50. Voici ce que chacune donne vraiment, y compris ce que la nôtre ne fait pas.</p>
+    </div>
+    <div class="comp-grid">
+      <div class="comp-col">
+        <h3>Chatbot juridique</h3>
+        <span class="prix-c">Gratuit à ~30 €/mois</span>
+        <ul>
+          <li class="oui">Réponse immédiate, à toute heure</li>
+          <li class="non">Réponse différente à chaque fois : rien de traçable</li>
+          <li class="non">Aucun document à présenter en cas de contrôle</li>
+          <li class="non">Ne connaît pas votre configuration : quels chats, quels outils, quels usages</li>
+          <li class="non">Peut se tromper avec assurance</li>
+        </ul>
+      </div>
+      <div class="comp-col">
+        <h3>Avocat ou cabinet</h3>
+        <span class="prix-c">600 à 2 000 €</span>
+        <ul>
+          <li class="oui">Analyse solide et opposable</li>
+          <li class="oui">Engagement de responsabilité</li>
+          <li class="non">Délai de plusieurs semaines</li>
+          <li class="non">Le travail technique n'est pas inclus : votre widget reste inchangé</li>
+          <li class="non">Tarif difficile à engager sur un sujet qui ressemble à « une ligne de texte »</li>
+        </ul>
+      </div>
+      <div class="comp-col comp-col--nous">
+        <h3>ConformeIA</h3>
+        <span class="prix-c">49 € — ou 490 € si on le fait pour vous</span>
+        <ul>
+          <li class="oui">L'audit mesure vos 4 situations en 3 minutes</li>
+          <li class="oui">Les mentions prêtes à l'emploi, applicables aujourd'hui</li>
+          <li class="oui">Le registre et la procédure qui prouvent votre diligence</li>
+          <li class="oui">En option : intervention sur place (Île-de-France) avec preuve datée</li>
+          <li class="non">Ce n'est pas un avis juridique personnalisé — nous ne le prétendons pas</li>
+        </ul>
+      </div>
+    </div>
+    <p class="comp-note"><b>Notre parti pris :</b> nous ne vendons ni du conseil juridique, ni un assistant qui répond à peu près. Nous vendons des documents opérationnels que vous appliquez vous-même — et, si vous préférez que ce soit fait, <a href="https://dembis91-940.github.io/agentia/art50-idf.html" style="color:var(--electric);font-weight:600">une intervention chez vous en Île-de-France</a>.</p>
   </div>
 </section>
 
