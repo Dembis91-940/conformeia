@@ -17,9 +17,9 @@ ai-act-conformite/
 ├── blog-digital-omnibus.html  Article sourcé « Digital Omnibus : ce qui est vraiment
 │                           reporté (et ce qui ne l'est pas) » (06/09/2026)
 ├── audit.html              Mini-outil d'audit JS : 14 questions → score + plan d'action
-├── paiement.html           Commande (3 offres) + EmailJS + note Stripe (clé en attente)
+├── paiement.html           Commande (3 offres) → Payment Links Stripe directs (live)
 ├── js/
-│   ├── tarifs.js           SOURCE UNIQUE des prix (49 / 149 / 290–590 €)
+│   ├── tarifs.js           SOURCE UNIQUE des prix (49 / 149 / à partir de 290 €)
 │   ├── audit-engine.js     Moteur d'audit pur (testé en Node)
 │   └── chatbot.js          Widget FAQ + capture de lead (EmailJS)
 ├── pack/                   CONTENU LIVRÉ AU CLIENT (A4 imprimable)
@@ -36,8 +36,8 @@ ai-act-conformite/
 ## Déploiement (GitHub Pages ou hébergeur statique)
 
 1. Pusher le dossier sur un dépôt (ex. `conformeia`) branché GitHub Pages.
-2. Stripe : créer les Payment Links (49 €, 149 €, 290–590 €) puis remplacer les boutons
-   `paiement.html` (actuellement : précommande EmailJS + note d'activation).
+2. Stripe : Payment Links live en place (49 €, 149 €, 290 € pour « Conformité complète », affichée
+   « à partir de 290 € »). Les boutons de `index.html` et `paiement.html` y mènent directement.
 3. EmailJS : déjà câblé sur le compte du portfolio (service_cy1ytdb / template_xpo58cv) —
    les leads arrivent sur la boîte de réception configurée.
 
@@ -52,5 +52,8 @@ ai-act-conformite/
 
 - Le guide et les mentions sont fondés sur le Règlement (UE) 2024/1689 et les publications officielles
   (Commission, economie.gouv.fr, OIA) ; un disclaimer « pas un conseil juridique » figure sur chaque document.
-- Aucun faux engagement : le paiement Stripe est annoncé « en cours d'activation » et la commande
-  part en précommande EmailJS tant que la clé n'est pas fournie par l'utilisateur.
+- Aucune promesse absolue : pas de « zéro risque », pas d'« attestation » officielle (on livre un
+  rapport de synthèse interne), réponses « personnalisées » (pas d'« expert » certifié).
+- Références vérifiées sur EUR-Lex le 18/10/2026 : règl. (UE) 2026/1744 du 8 juillet 2026, JO du
+  24/07/2026, en vigueur le 27/07/2026 ; art. 113 modifié (haut risque 02/12/2027 et 02/08/2028,
+  art. 5 nouvelles interdictions 02/12/2026) ; art. 111(4) : marquage Art. 50(2) au 02/12/2026.
