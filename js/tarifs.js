@@ -33,23 +33,23 @@ window.CONFORMEIA_TARIFS = (function () {
         "Atelier visio 2 h : diagnostic de vos 4 situations réelles",
         "Relecture personnalisée de vos mentions et étiquetages",
         "Registre de conformité pré-rempli pour votre entreprise",
-        "Attestation documentaire de mise en conformité"
+        "Rapport de synthèse de mise en conformité (document interne, pas un certificat officiel)"
       ]
     },
     service: {
       id: "service",
       nom: "Conformité complète",
       prix: 290,
-      prixMax: 590,
+      aPartirDe: true,
       prefixe: "À partir de",
       badge: "SERVICE",
-      cible: "PME qui veulent tout déléguer (périmètre : 290 € → 590 €)",
+      cible: "PME qui veulent tout déléguer — à partir de 290 €, selon le périmètre",
       contenu: [
         "Audit complet de vos usages IA (4 situations)",
         "Rédaction des mentions + intégration (chatbot, site, contenus)",
         "Procédure interne et registre remplis",
         "Formation 1 h de votre équipe (10 personnes max)",
-        "Attestation + accompagnement jusqu'à conformité"
+        "Rapport de synthèse de mise en conformité + accompagnement jusqu'à la mise en place des mesures"
       ]
     }
   };
@@ -61,7 +61,7 @@ window.CONFORMEIA_TARIFS = (function () {
   function label(packId) {
     var p = PACKS[packId];
     if (!p) return "";
-    if (p.prixMax) return p.prefixe + " " + formatPrix(p.prix) + " – " + formatPrix(p.prixMax);
+    if (p.aPartirDe) return "À partir de " + formatPrix(p.prix);
     return p.prefixe + " " + formatPrix(p.prix);
   }
 
