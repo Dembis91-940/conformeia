@@ -60,7 +60,7 @@ if (broken === 0) ok(totalLinks + " liens internes résolus (0 cassé)");
 /* ---------- 3. Prix cohérents (source unique vs pages) ---------- */
 console.log("3) Cohérence des prix");
 const tarifs = fs.readFileSync(path.join(ROOT, "js/tarifs.js"), "utf8");
-[["pack49", "prix: 49"], ["pack149", "prix: 149"], ["service", "prix: 290"], ["service", "prixMax: 590"]]
+[["pack49", "prix: 49"], ["pack149", "prix: 149"], ["service", "prix: 290"], ["service", "aPartirDe: true"]]
   .forEach(([k, v]) => {
     tarifs.includes(k) && tarifs.includes(v) ? ok("tarifs.js contient " + k + " " + v) : fail("tarifs.js : " + k + " " + v + " absent");
   });
@@ -72,13 +72,14 @@ const tarifs = fs.readFileSync(path.join(ROOT, "js/tarifs.js"), "utf8");
   ];
   if (f === "index.html") {
     checks.push(["49 €", /49[^\d]|"49"/], ["149 €", /149[^\d]|"149"/],
-      ["290 €", /290[^\d]|"290"/], ["590 €", /590[^\d]|"590"/]);
+      ["290 €", /290[^\d]|"290"/], ["à partir de (service)", /aPartirDe/]);
   } else {
     /* paiement.html rend les prix DEPUIS la source unique (tarifs.js) :
-       vérifier l'usage de T.PACKS et des champs prix/prixMax */
+       vérifier l'usage de T.PACKS, du champ aPartirDe et des liens Stripe */
     checks.push(
       ["utilise T.PACKS", /T\.PACKS/],
-      ["utilise prixMax (590)", /prixMax/],
+      ["utilise aPartirDe (service)", /aPartirDe/],
+      ["liens Stripe directs", /buy\.stripe\.com/],
       ["utilise formatPrix", /formatPrix/]
     );
   }
@@ -101,7 +102,7 @@ lbl49 === "À partir de 49 €"
 lbl149 === "À partir de 149 €"
   ? ok("pack149 → « " + lbl149 + " »")
   : fail("pack149 label inattendu : " + lbl149);
-lblSvc === "À partir de 290 € – 590 €"
+lblSvc === "À partir de 290 €"
   ? ok("service → « " + lblSvc + " »")
   : fail("service label inattendu : " + lblSvc);
 
