@@ -14,7 +14,7 @@
   var FAQ = [
     { q: "Suis-je concerné par l'article 50 ?", a: "Oui si vous déployez une IA qui interagit avec des personnes (chatbot, voix, avatar), créez des deepfakes ou contenus photoréalistes, publiez des textes d'intérêt public générés par IA, ou commercialisez un outil génératif sous votre marque." },
     { q: "Quelle est l'échéance ?", a: "Les obligations de transparence (Art. 50) sont en vigueur depuis le 02/08/2026. Le marquage des systèmes déjà en service est à régulariser au plus tard le 02/12/2026." },
-    { q: "Quelles amendes ?", a: "Jusqu'à 15 000 000 € ou 3 % du chiffre d'affaires annuel mondial (le montant le plus élevé), pour non-respect des obligations de transparence." },
+    { q: "Quelles amendes ?", a: "Jusqu'à 15 000 000 € ou 3 % du chiffre d'affaires annuel mondial (le montant le plus élevé ; pour les PME, le plus faible des deux — art. 99.6), pour non-respect des obligations de transparence." },
     { q: "Fournisseur ou déployeur, quelle différence ?", a: "Le fournisseur développe ou met sur le marché le système (OpenAI, Mistral…). Le déployeur l'utilise dans son activité professionnelle (vous). Les deux ont des obligations Art. 50 distinctes — le pack couvre les deux cas." },
     { q: "Une mention « ceci est une IA » suffit-elle ?", a: "Pour un chatbot : oui, si elle est visible avant ou au premier contact. Pour les deepfakes : étiquetage clair. Pour les textes d'intérêt public : il faut en plus un marquage lisible par machine (C2PA/IPTC)." },
     { q: "Le pack remplace-t-il un avocat ?", a: "Non. C'est un outil de mise en conformité pratique (procédures, mentions, registre) qui réduit le risque. Pour un avis juridique formel, consultez un professionnel du droit." }
