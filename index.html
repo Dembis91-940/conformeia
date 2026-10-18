@@ -59,6 +59,10 @@
   .hero h1 .accent{color:var(--electric)}
   .hero p.lead{font-size:1.12rem;color:#AEB9C4;max-width:560px;margin-bottom:28px}
   .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-path{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 18px;font-size:.92rem;font-weight:600}
+  .hero-path a{color:#fff;text-decoration:none;border:1px solid rgba(237,240,243,.28);border-radius:99px;padding:6px 14px;background:rgba(237,240,243,.06)}
+  .hero-path a:hover{background:rgba(237,240,243,.14)}
+  .hero-path .arr{color:#AEB9C4}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:15px 28px;border-radius:10px;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .18s,box-shadow .18s,background .18s;cursor:pointer;border:none}
   .btn:hover{transform:translateY(-2px)}
   .btn-primary{background:var(--electric);color:#fff;box-shadow:0 10px 30px rgba(6,75,217,.4)}
@@ -299,10 +303,11 @@
       <div>
         <span class="kicker"><span class="dot"></span> Règlement (UE) 2024/1689 · Digital Omnibus : Art. 50 NON reporté</span>
         <h1 class="serif">Votre IA doit dire <span class="underline">qu'elle est une IA</span>. <span class="accent">Depuis le 2 août 2026.</span></h1>
-        <p class="lead">Chatbots, deepfakes, textes d'intérêt public, outils génératifs : si vous déployez de l'IA générative, l'article 50 vous impose des obligations de transparence. Le Digital Omnibus (règl. UE 2026/1744) a reporté le haut risque à 2027-2028 — <strong style="color:#FFD166">l'article 50, lui, n'a pas bougé</strong>. Amendes jusqu'à <strong style="color:#FF6B7E">15 M€ ou 3 % du CA</strong>. Le pack ConformeIA vous met en règle en un week-end — sans juriste.</p>
+        <div class="hero-path" aria-label="Parcours conseillé"><a href="audit.html">① Audit gratuit (3 min)</a><span class="arr">→</span><a href="#pricing">② Pack Art. 50 Express — 49 €</a></div>
+        <p class="lead">Chatbots, deepfakes, textes d'intérêt public, outils génératifs : si vous déployez de l'IA générative, l'article 50 vous impose des obligations de transparence. Le Digital Omnibus (règl. UE 2026/1744) a reporté le haut risque à 2027-2028 — <strong style="color:#FFD166">l'article 50, lui, n'a pas bougé</strong>. Amendes jusqu'à <strong style="color:#FF6B7E">15 M€ ou 3 % du CA</strong>. Le pack ConformeIA vous donne les documents pour vous mettre en règle en un week-end.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="audit.html">Faire l'audit gratuit (3 min) →</a>
-          <a class="btn btn-ghost" href="#pricing">Voir le pack</a>
+          <a class="btn btn-ghost" href="#pricing">Pack Express — 49 € →</a>
         </div>
         <div class="deadline">
           <span class="stamp">DÉLAI RÉEL</span>
@@ -326,7 +331,7 @@
 <section class="bandeau">
   <div class="wrap stats">
     <div class="stat danger"><b data-count="15" data-suffix=" M€">15 M€</b><span>d'amende maximale pour non-respect des obligations de transparence (Art. 99.4)</span></div>
-    <div class="stat blue"><b>3&nbsp;%</b><span>du chiffre d'affaires mondial — le montant le plus élevé des deux s'applique</span></div>
+    <div class="stat blue"><b>3&nbsp;%</b><span>du chiffre d'affaires mondial — le plus élevé des deux ; pour les PME, le plus faible des deux (art. 99.6)</span></div>
     <div class="stat"><b data-count="190">≈ 190</b><span>signataires du code de bonnes pratiques — les autres doivent prouver leur conformité</span></div>
     <div class="stat"><b>4,67 Md$</b><span>de marché mondial de la provenance des contenus IA d'ici 2031 (CAGR 28,95 %)</span></div>
   </div>
@@ -376,12 +381,12 @@
       <div>
         <div class="num">SCÈNE 01</div>
         <h2 class="serif">L'amende.</h2>
-        <p>Depuis le 2 août 2026, un chatbot qui se fait passer pour un humain, un deepfake non étiqueté, un texte d'intérêt public non marqué : c'est une infraction. Jusqu'à 15 M€ ou 3 % du CA. Aucun « petit » n'est exonéré.</p>
+        <p>Depuis le 2 août 2026, un chatbot qui se fait passer pour un humain, un deepfake non étiqueté, un texte d'intérêt public non marqué : c'est une infraction. Jusqu'à 15 M€ ou 3 % du CA. Aucune taille d'entreprise n'est exclue (pour les PME, le plafond est le plus faible des deux montants).</p>
       </div>
       <div class="scene-card">
         <h4>Cas type</h4>
         <div class="big danger">« Un site vitrine avec un agent conversationnel sans mention IA. »</div>
-        <div class="sub">Risque : mise en demeure, amende, image dégradée. La sanction ne distingue pas la bonne foi.</div>
+        <div class="sub">Risque : mise en demeure, amende, image dégradée. La bonne foi ne dispense pas de l'obligation.</div>
       </div>
     </div>
     <div class="scene" id="sc2">
@@ -415,7 +420,7 @@
 <section class="triade">
   <div class="wrap">
     <div><span class="tick">✓</span> Zéro jargon juridique</div>
-    <div><span class="tick">✓</span> Zéro risque d'amende Art. 50</div>
+    <div><span class="tick">✓</span> Obligations Art. 50 traitées point par point</div>
     <div><span class="tick">✓</span> Preuve documentaire en main</div>
   </div>
 </section>
@@ -510,13 +515,13 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="kicker">La méthode</span>
-      <h2 class="serif">Quatre étapes. Un week-end. <em style="font-style:normal;color:var(--electric)">Conforme.</em></h2>
+      <h2 class="serif">Quatre étapes. Un week-end. <em style="font-style:normal;color:var(--electric)">Documenté.</em></h2>
     </div>
     <div class="method-grid">
       <div class="mstep"><span class="n">01</span><h3>Auditer</h3><p>Le mini-outil évalue vos 4 situations en 3 minutes et produit un plan d'action priorisé.</p></div>
       <div class="mstep"><span class="n">02</span><h3>Mentionner</h3><p>Vous appliquez les modèles de mentions prêts à l'emploi : chatbot, deepfakes, textes, voix.</p></div>
       <div class="mstep"><span class="n">03</span><h3>Documenter</h3><p>Procédure interne et registre de conformité remplis : vous prouvez votre diligence.</p></div>
-      <div class="mstep"><span class="n">04</span><h3>Prouver</h3><p>Attestation documentaire + mises à jour 12 mois : vous dormez tranquille jusqu'à l'échéance du 02·12·2026.</p></div>
+      <div class="mstep"><span class="n">04</span><h3>Prouver</h3><p>Rapport de synthèse de mise en conformité (document interne, pas un certificat officiel) + mises à jour 12 mois, avant l'échéance du 02·12·2026.</p></div>
     </div>
   </div>
 </section>
@@ -526,7 +531,7 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="kicker">Avant de payer</span>
-      <h2 class="serif">Un chatbot juridique peut vous répondre. <em style="font-style:normal;color:var(--electric)">Il ne peut pas vous couvrir.</em></h2>
+      <h2 class="serif">Un chatbot juridique peut vous répondre. <em style="font-style:normal;color:var(--electric)">Il ne vous laisse aucun document.</em></h2>
       <p>Trois façons de traiter l'article 50. Voici ce que chacune donne vraiment, y compris ce que la nôtre ne fait pas.</p>
     </div>
     <div class="comp-grid">
@@ -554,7 +559,7 @@
       </div>
       <div class="comp-col comp-col--nous">
         <h3>ConformeIA</h3>
-        <span class="prix-c">49 € — ou 490 € si on le fait pour vous</span>
+        <span class="prix-c">49 € — ou à partir de 290 € si on le fait pour vous</span>
         <ul>
           <li class="oui">L'audit mesure vos 4 situations en 3 minutes</li>
           <li class="oui">Les mentions prêtes à l'emploi, applicables aujourd'hui</li>
@@ -573,7 +578,7 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="kicker">Le livrable</span>
-      <h2 class="serif">Tout ce qu'il faut pour être en règle — <em style="font-style:normal;color:var(--ok)">prêt à l'emploi</em></h2>
+      <h2 class="serif">Les documents pour vous mettre en règle — <em style="font-style:normal;color:var(--ok)">prêt à l'emploi</em></h2>
       <p>Pas de cours de droit : des documents opérationnels, au format A4 imprimable, adaptés aux PME françaises.</p>
     </div>
     <ul class="pack-list">
@@ -607,9 +612,9 @@
       <div>
         <span class="kicker" style="color:var(--muted)">Réponse &lt; 24 h</span>
         <h2 class="serif">Parlons de vos usages IA. <em style="font-style:normal;color:var(--electric)">On vous dit exactement quoi faire.</em></h2>
-        <p class="intro">Décrivez votre situation : nous vous répondons avec le plan de mise en conformité adapté (ou l'offre service 290–590 € si vous voulez tout déléguer).</p>
+        <p class="intro">Décrivez votre situation : nous vous répondons avec le plan de mise en conformité adapté (ou l'offre « Conformité complète » à partir de 290 € si vous voulez tout déléguer).</p>
         <div class="process"><span class="on">Demande</span><span>Diagnostic</span><span>Devis</span><span>Mise en conformité</span></div>
-        <div class="assurance"><span style="font-size:1.6rem">🛡️</span><span><b>Vos données restent confidentielles.</b> Aucune transmission à des tiers. Réponse écrite sous 24 h ouvrées par un expert conformité IA.</span></div>
+        <div class="assurance"><span style="font-size:1.6rem">🛡️</span><span><b>Vos données restent confidentielles.</b> Aucune transmission à des tiers. Réponse écrite et personnalisée sous 24 h ouvrées.</span></div>
       </div>
       <div>
         <div class="form-ok" id="formOk">✓ Demande envoyée — nous revenons vers vous sous 24 h ouvrées. Vérifiez votre boîte mail.</div>
@@ -667,14 +672,14 @@
     </div>
     <details class="faq-item"><summary>Suis-je vraiment concerné par l'article 50 ?</summary><p>Oui dès que vous déployez une IA qui interagit avec des personnes (chatbot, voix, avatar), créez ou diffusez des deepfakes, publiez des textes d'intérêt public générés par IA, ou commercialisez un outil génératif sous votre marque. L'audit gratuit vérifie votre cas en 3 minutes.</p></details>
     <details class="faq-item"><summary>Quelle est la différence entre fournisseur et déployeur ?</summary><p>Le fournisseur développe ou met sur le marché le système (OpenAI, Mistral…). Le déployeur l'utilise dans son activité professionnelle : c'est vous. Fournisseur et déployeur ont des obligations Art. 50 distinctes ; si vous revendez un outil génératif sous votre marque, vous cumulez les deux rôles.</p></details>
-    <details class="faq-item"><summary>Quelles sont les sanctions concrètes ?</summary><p>Pour les obligations de transparence (Art. 50) : jusqu'à 15 000 000 € ou 3 % du chiffre d'affaires annuel mondial, le montant le plus élevé étant retenu. À cela s'ajoute l'atteinte réputationnelle — vos clients et partenaires vérifient de plus en plus la conformité.</p></details>
+    <details class="faq-item"><summary>Quelles sont les sanctions concrètes ?</summary><p>Pour les obligations de transparence (Art. 50) : jusqu'à 15 000 000 € ou 3 % du chiffre d'affaires annuel mondial, le montant le plus élevé étant retenu — pour les PME et start-up, c'est le montant le plus faible des deux (art. 99.6). Les autorités tiennent compte de la gravité, de la durée et du caractère intentionnel ou non du manquement. À cela s'ajoute l'atteinte réputationnelle — vos clients et partenaires vérifient de plus en plus la conformité.</p></details>
     <details class="faq-item"><summary>J'ai lu que « l'AI Act est reporté à 2027 ». Pourquoi devrais-je agir maintenant ?</summary><p>Parce que le report ne concerne que le régime « haut risque » (Annexe III → 2 décembre 2027, Annexe I → 2 août 2028). L'article 50 — transparence des chatbots, deepfakes, textes d'intérêt public — est en vigueur depuis le 2 août 2026 et n'a pas été reporté par le Digital Omnibus (règl. UE 2026/1744). Les autorités de surveillance peuvent sanctionner dès maintenant : jusqu'à 15 M€ ou 3 % du CA. Le « on verra en 2027 » est l'erreur coûteuse de l'année.</p></details>
     <details class="faq-item"><summary>Qu'est-ce que le Digital Omnibus (règl. UE 2026/1744) exactement ?</summary><p>C'est la première modification de l'EU AI Act, publiée au JO le 24/07/2026 et en vigueur depuis le 27/07/2026. Elle reporte le haut risque à 2027-2028, adoucit l'AI literacy (Art. 4, obligation de moyens), ajoute 2 interdictions au 02/12/2026 (apps « nudifier » et CSAM généré par IA, amendes jusqu'à 35 M€ ou 7 % du CA) — mais laisse l'article 50 en l'état : vos obligations de transparence n'ont pas bougé.</p></details>
     <details class="faq-item"><summary>Le 2 décembre 2026, c'est quoi exactement ?</summary><p>Les obligations de transparence sont en vigueur depuis le 2 août 2026. Pour le marquage des systèmes d'IA déjà en service avant cette date, l'UE accorde un délai jusqu'au 2 décembre 2026. Passé cette date, plus aucun système « hérité » n'est toléré.</p></details>
     <details class="faq-item"><summary>Quelles sont les 2 nouvelles interdictions qui entrent en jeu au 02/12/2026 ?</summary><p>Le Digital Omnibus ajoute à l'article 5 : (1) l'interdiction des applications « nudifier » qui génèrent des images intimes non consenties de personnes réelles, et (2) l'interdiction des systèmes qui génèrent des contenus pédocriminels (CSAM) par IA. Sanction : jusqu'à 35 M€ ou 7 % du CA mondial. Si vous développez ou revendez un outil génératif, vérifiez dès maintenant que ces usages sont techniquement bloqués.</p></details>
     <details class="faq-item"><summary>« Je forme mes équipes à l'IA » : c'est encore obligatoire après l'Omnibus ?</summary><p>Oui. L'AI literacy (Art. 4) reste une obligation depuis le 02/02/2025, mais le Digital Omnibus l'a transformée depuis le 27/07/2026 : vous devez « prendre des mesures » pour développer la culture IA de vos équipes, sans devoir garantir un niveau précis par personne. Concrètement : documentez vos actions de formation — c'est devenu une obligation de moyens, pas de résultat.</p></details>
     <details class="faq-item"><summary>Une mention « ceci est une IA » suffit-elle ?</summary><p>Pour un chatbot : oui, si elle est visible avant ou au premier contact. Pour un deepfake : il faut un étiquetage clair et durable. Pour un texte d'intérêt public : la mention ne suffit pas, il faut aussi un marquage lisible par machine (C2PA/IPTC) — le pack contient les deux.</p></details>
-    <details class="faq-item"><summary>Le pack remplace-t-il un avocat ?</summary><p>Non — et c'est assumé. Le pack est un outil de mise en conformité opérationnelle (mentions, procédures, registre, preuve documentaire) qui couvre 90 % des cas PME. Pour une situation complexe ou un avis formel, l'offre service inclut un accompagnement expert ; un avocat reste recommandé pour les cas sensibles.</p></details>
+    <details class="faq-item"><summary>Le pack remplace-t-il un avocat ?</summary><p>Non — et c'est assumé. Le pack est un outil de mise en conformité opérationnelle (mentions, procédures, registre, preuve documentaire) pensé pour les cas courants des PME. Il ne remplace pas un conseil juridique : pour une situation complexe ou un avis formel, consultez un avocat.</p></details>
     <details class="faq-item"><summary>Comment se passe la livraison ?</summary><p>Paiement sécurisé puis livraison par email sous 24 h ouvrées : guide, checklist, modèles, procédure et registre au format A4 imprimable, plus l'accès au mini-outil d'audit. Mises à jour réglementaires incluses 12 mois.</p></details>
     <details class="faq-item"><summary>L'article 50 ne concerne que les chatbots ?</summary><p>Non : il couvre aussi les deepfakes et contenus synthétiques (images, vidéos, audios photoréalistes générés ou manipulés), les textes d'intérêt public produits par IA et les outils génératifs commercialisés sous votre marque. Si vous générez, diffusez ou revendez du contenu IA, vous êtes concerné même sans chatbot.</p></details>
     <details class="faq-item"><summary>IA embarquée et caméras (lunettes connectées, vidéosurveillance intelligente) : suis-je concerné ?</summary><p>Dès qu'une IA interagit avec des personnes ou traite des images les montrant, l'obligation d'information s'applique. Le sujet est d'actualité : Meta a désactivé les caméras de milliers de smart glasses le 02/09/2026 sous pression réglementaire, et le marché bascule vers du « sans caméra par conformité » pour les environnements sensibles (hôpitaux, cabinets médicaux, banques). La transparence devient un argument commercial, pas une contrainte.</p></details>
@@ -688,7 +693,7 @@
     <div class="cols">
       <div>
         <div class="logo" style="margin-bottom:12px">Conforme<em>IA</em></div>
-        <p>La conformité à l'article 50 de l'EU AI Act, sans juriste. Conçu pour les PME françaises qui déploient de l'IA générative au quotidien.</p>
+        <p>Des outils pour se mettre en conformité à l'article 50 de l'EU AI Act. Conçu pour les PME françaises qui déploient de l'IA générative au quotidien.</p>
       </div>
       <div>
         <h5>Produit</h5>
@@ -751,8 +756,8 @@
     var p = T.PACKS[id];
     var featured = p.badge === "LE PLUS CHOISI" ? " featured" : "";
     var badgeHtml = p.badge ? '<span class="badge' + (p.badge === "SERVICE" ? " service" : "") + '">' + p.badge + "</span>" : "";
-    var prixHtml = p.prixMax
-      ? T.formatPrix(p.prix) + ' <small>– ' + T.formatPrix(p.prixMax) + '</small>'
+    var prixHtml = p.aPartirDe
+      ? '<small>à partir de</small> ' + T.formatPrix(p.prix)
       : T.formatPrix(p.prix) + " <small>TTC</small>";
     var items = p.contenu.map(function (c) { return '<li><span class="tick">✓</span><span>' + c + "</span></li>"; }).join("");
     var STRIPE_DIRECT = { pack49: "https://buy.stripe.com/4gM6oJ9b05TTaDrdGsfrW0k", pack149: "https://buy.stripe.com/fZuaEZevkdmlcLzbykfrW0l", service: "https://buy.stripe.com/dRmaEZaf4gyxfXLeKwfrW0m" };
