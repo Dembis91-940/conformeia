@@ -54,7 +54,7 @@
   .req{color:var(--oficial)}
   .total{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);margin-top:8px;padding-top:16px;font-weight:800;font-size:1.1rem}
   .total .sum{font-family:Georgia,serif;font-size:1.6rem}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:10px;font-weight:700;font-size:.95rem;border:none;cursor:pointer;transition:transform .15s,background .15s;width:100%;margin-top:14px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:10px;font-weight:700;font-size:.95rem;border:none;cursor:pointer;transition:transform .15s,background .15s;width:100%;margin-top:14px;text-decoration:none;box-sizing:border-box}
   .btn:hover{transform:translateY(-1px)}
   .btn-primary{background:var(--electric);color:#fff}
   .btn-primary:hover{background:var(--electric-h)}
@@ -74,7 +74,6 @@
   <h1 class="serif">Choisissez votre niveau de conformité.</h1>
   <p class="intro">Livraison par email sous 24 h ouvrées. Mises à jour réglementaires incluses 12 mois. Garantie 14 jours « conforme documentairement ou remboursé ».</p>
 
-  <div class="ok-box" id="okBox">✓ Commande reçue ! Nous revenons vers vous sous 24 h ouvrées avec les instructions de règlement et la livraison de votre pack. Vérifiez votre boîte mail.</div>
 
   <div class="cards" id="cards"></div>
 
@@ -83,8 +82,8 @@
     <p class="sel-line">Offre sélectionnée : <b id="selLabel">—</b> · <b id="selPrix">—</b></p>
     <form id="orderForm" novalidate>
       <div class="frow">
-        <div class="fgroup"><label>Nom complet <span class="req">*</span></label><input id="o-nom" required placeholder="Marie Dupont"></div>
-        <div class="fgroup"><label>Email de livraison <span class="req">*</span></label><input id="o-email" type="email" required placeholder="marie@entreprise.fr"></div>
+        <div class="fgroup"><label>Nom complet</label><input id="o-nom" placeholder="Marie Dupont"></div>
+        <div class="fgroup"><label>Email</label><input id="o-email" type="email" placeholder="marie@entreprise.fr"></div>
       </div>
       <div class="frow">
         <div class="fgroup"><label>Entreprise</label><input id="o-societe" placeholder="SARL Exemple"></div>
@@ -92,8 +91,9 @@
       </div>
       <div class="fgroup"><label>Message (optionnel)</label><input id="o-msg" placeholder="Votre situation IA en 2 lignes…"></div>
       <div class="total"><span>Total</span><span class="sum" id="selTotal">—</span></div>
-      <button class="btn btn-primary" type="submit" id="payBtn">Commander et recevoir le pack →</button>
-      <p class="stripe-note">🔒 Paiement par carte via Stripe : l'activation du compte marchand est en cours — votre commande est confirmée par email et le lien de paiement sécurisé vous est transmis sous 24 h. Dès l'activation, le règlement est instantané sur cette page.</p>
+      <a class="btn btn-primary" id="payBtn" href="https://buy.stripe.com/fZuaEZevkdmlcLzbykfrW0l" rel="noopener">Payer par carte — paiement sécurisé Stripe →</a>
+      <p class="stripe-note">🔒 Paiement immédiat par carte sur la page sécurisée Stripe. Les champs ci-dessus sont facultatifs (facturation au nom de votre entreprise) ; l'email de livraison est demandé par Stripe.</p>
+      <p class="stripe-note">ConformeIA est un outil d'aide à la mise en conformité : il ne remplace pas un conseil juridique.</p>
       <p class="rgpd">Vos données servent uniquement à traiter votre commande et à vous livrer le pack. Conservées 12 mois, jamais revendues. Conforme RGPD.</p>
     </form>
   </div>
@@ -109,10 +109,12 @@
   if (!T) return;
   var ids = ["pack49", "pack149", "service"];
   var selected = "pack149";
+  /* Payment Links Stripe réels (live) */
+  var STRIPE = { pack49: "https://buy.stripe.com/4gM6oJ9b05TTaDrdGsfrW0k", pack149: "https://buy.stripe.com/fZuaEZevkdmlcLzbykfrW0l", service: "https://buy.stripe.com/dRmaEZaf4gyxfXLeKwfrW0m" };
 
   function labelPrix(id) {
     var p = T.PACKS[id];
-    if (p.prixMax) return T.formatPrix(p.prix) + " – " + T.formatPrix(p.prixMax);
+    if (p.aPartirDe) return "à partir de " + T.formatPrix(p.prix);
     return T.formatPrix(p.prix) + " TTC";
   }
 
@@ -120,14 +122,15 @@
   ids.forEach(function (id) {
     var p = T.PACKS[id];
     var badgeHtml = p.badge ? '<span class="badge' + (p.badge === "SERVICE" ? " service" : "") + '">' + p.badge + "</span>" : "";
-    var prixHtml = p.prixMax
-      ? T.formatPrix(p.prix) + ' <small>– ' + T.formatPrix(p.prixMax) + '</small>'
+    var prixHtml = p.aPartirDe
+      ? '<small>à partir de</small> ' + T.formatPrix(p.prix)
       : T.formatPrix(p.prix) + " <small>TTC</small>";
     var items = p.contenu.map(function (c) { return '<li><span class="tick">✓</span><span>' + c + "</span></li>"; }).join("");
     var div = document.createElement("div");
     div.className = "card" + (id === selected ? " sel" : "");
     div.id = "c-" + id;
-    div.innerHTML = badgeHtml + "<h3>" + p.nom + "</h3><div class='price'>" + prixHtml + "</div><div class='sub'>" + p.cible + "</div><ul>" + items + "</ul>";
+    div.innerHTML = badgeHtml + "<h3>" + p.nom + "</h3><div class='price'>" + prixHtml + "</div><div class='sub'>" + p.cible + "</div><ul>" + items + "</ul>" +
+      '<a class="btn btn-primary" href="' + STRIPE[id] + '" rel="noopener" style="margin-top:8px">Payer ' + T.formatPrix(p.prix) + ' — Stripe →</a>';
     div.addEventListener("click", function () { select(id); });
     cards.appendChild(div);
   });
@@ -139,6 +142,7 @@
     document.getElementById("selLabel").textContent = p.nom;
     document.getElementById("selPrix").textContent = labelPrix(id);
     document.getElementById("selTotal").textContent = labelPrix(id);
+    document.getElementById("payBtn").href = STRIPE[id];
     var hash = id === "pack49" ? "pack49" : (id === "pack149" ? "pack149" : "service");
     history.replaceState(null, "", "#" + hash);
   }
@@ -147,7 +151,7 @@
   var h = location.hash.replace("#", "");
   if (T.PACKS[h]) select(h); else select(selected);
 
-  /* EmailJS */
+  /* EmailJS — envoi facultatif des infos de facturation (n'empêche jamais le paiement) */
   var SERVICE_ID = "service_cy1ytdb", TEMPLATE_ID = "template_xpo58cv", PUBLIC_KEY = "8Pui4ZEqxW2jRVF7h";
   var s = document.createElement("script");
   s.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
@@ -156,37 +160,24 @@
 
   document.getElementById("orderForm").addEventListener("submit", function (ev) {
     ev.preventDefault();
+    window.location.href = STRIPE[selected];
+  });
+
+  document.getElementById("payBtn").addEventListener("click", function () {
     var nom = document.getElementById("o-nom").value.trim();
     var email = document.getElementById("o-email").value.trim();
-    if (!nom || !email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-      alert("Merci de renseigner votre nom et un email valide.");
-      return;
-    }
+    if (!(nom || email) || !window.emailjs) return;
     var p = T.PACKS[selected];
-    var payload = {
-      nom: nom,
-      email: email,
-      societe: document.getElementById("o-societe").value,
-      siret: document.getElementById("o-siret").value,
-      offre: p.nom,
-      prix: labelPrix(selected),
-      message: document.getElementById("o-msg").value,
-      site: "ConformeIA — Commande pack Art. 50"
-    };
-    var done = function () {
-      document.getElementById("okBox").style.display = "block";
-      document.getElementById("orderForm").style.display = "none";
-      document.getElementById("payBtn").disabled = true;
-      /* Paiement réel — redirection vers le Payment Link Stripe du pack choisi */
-      var STRIPE = { pack49: "https://buy.stripe.com/4gM6oJ9b05TTaDrdGsfrW0k", pack149: "https://buy.stripe.com/fZuaEZevkdmlcLzbykfrW0l", service: "https://buy.stripe.com/dRmaEZaf4gyxfXLeKwfrW0m" };
-      var url = STRIPE[selected];
-      if (url) { setTimeout(function () { window.location.href = url; }, 1500); }
-    };
-    if (window.emailjs) {
-      emailjs.send(SERVICE_ID, TEMPLATE_ID, payload).then(done).catch(function () { done(); });
-    } else {
-      done();
-    }
+    try {
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+        nom: nom, email: email,
+        societe: document.getElementById("o-societe").value,
+        siret: document.getElementById("o-siret").value,
+        offre: p.nom, prix: labelPrix(selected),
+        message: document.getElementById("o-msg").value,
+        site: "ConformeIA — Paiement Stripe (infos facturation)"
+      });
+    } catch (e) {}
   });
 })();
 </script>
