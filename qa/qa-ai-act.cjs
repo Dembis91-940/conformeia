@@ -17,11 +17,11 @@ function ok(msg) { console.log("  ✓ " + msg); }
 const REQUIRED = [
   "index.html", "audit.html", "paiement.html", "blog-digital-omnibus.html",
   "js/tarifs.js", "js/audit-engine.js", "js/chatbot.js",
-  "pack/guide-conformite-art50.html", "pack/guide-conformite-art50.md",
-  "pack/checklist-4-situations.html", "pack/modeles-mentions.html",
-  "pack/procedure-interne.html", "README.md",
-  "zip/ai-act-conformite-pack.zip"
+  "README.md"
 ];
+/* Le contenu payant (pack/ et zip/) est livré par email après paiement : il est
+   volontairement ABSENT du dépôt public depuis le 18/10/2026. Le QA ne doit donc
+   plus exiger sa présence — sinon il échoue sur un dépôt pourtant correct. */
 console.log("1) Fichiers requis");
 REQUIRED.forEach((f) => {
   fs.existsSync(path.join(ROOT, f)) ? ok(f) : fail("manquant : " + f);
@@ -30,8 +30,7 @@ REQUIRED.forEach((f) => {
 /* ---------- 2. Liens internes ---------- */
 console.log("2) Liens internes");
 const htmlFiles = ["index.html", "audit.html", "paiement.html", "blog-digital-omnibus.html",
-  "pack/guide-conformite-art50.html", "pack/checklist-4-situations.html",
-  "pack/modeles-mentions.html", "pack/procedure-interne.html"];
+  "blog-digital-omnibus.html"];
 let totalLinks = 0, broken = 0;
 
 htmlFiles.forEach((rel) => {
@@ -60,7 +59,7 @@ if (broken === 0) ok(totalLinks + " liens internes résolus (0 cassé)");
 /* ---------- 3. Prix cohérents (source unique vs pages) ---------- */
 console.log("3) Cohérence des prix");
 const tarifs = fs.readFileSync(path.join(ROOT, "js/tarifs.js"), "utf8");
-[["pack49", "prix: 49"], ["pack149", "prix: 149"], ["service", "prix: 290"], ["service", "aPartirDe: true"]]
+[["pack49", "prix: 49"], ["pack149", "prix: 149"], ["pack290", "prix: 290"]]
   .forEach(([k, v]) => {
     tarifs.includes(k) && tarifs.includes(v) ? ok("tarifs.js contient " + k + " " + v) : fail("tarifs.js : " + k + " " + v + " absent");
   });
@@ -72,13 +71,12 @@ const tarifs = fs.readFileSync(path.join(ROOT, "js/tarifs.js"), "utf8");
   ];
   if (f === "index.html") {
     checks.push(["49 €", /49[^\d]|"49"/], ["149 €", /149[^\d]|"149"/],
-      ["290 €", /290[^\d]|"290"/], ["à partir de (service)", /aPartirDe/]);
+      ["290 €", /290[^\d]|"290"/]);
   } else {
     /* paiement.html rend les prix DEPUIS la source unique (tarifs.js) :
        vérifier l'usage de T.PACKS, du champ aPartirDe et des liens Stripe */
     checks.push(
       ["utilise T.PACKS", /T\.PACKS/],
-      ["utilise aPartirDe (service)", /aPartirDe/],
       ["liens Stripe directs", /buy\.stripe\.com/],
       ["utilise formatPrix", /formatPrix/]
     );
@@ -95,16 +93,16 @@ require(path.join(ROOT, "js/tarifs.js"));
 const T = global.window.CONFORMEIA_TARIFS;
 const lbl49 = T.label("pack49");
 const lbl149 = T.label("pack149");
-const lblSvc = T.label("service");
-lbl49 === "À partir de 49 €"
+const lblSvc = T.label("pack290");
+lbl49 === "49 €"
   ? ok("pack49 → « " + lbl49 + " »")
   : fail("pack49 label inattendu : " + lbl49);
-lbl149 === "À partir de 149 €"
+lbl149 === "149 €"
   ? ok("pack149 → « " + lbl149 + " »")
   : fail("pack149 label inattendu : " + lbl149);
-lblSvc === "À partir de 290 €"
-  ? ok("service → « " + lblSvc + " »")
-  : fail("service label inattendu : " + lblSvc);
+lblSvc === "290 €"
+  ? ok("pack290 → « " + lblSvc + " »")
+  : fail("pack290 label inattendu : " + lblSvc);
 
 /* ---------- 4. Moteur d'audit (3 scénarios) ---------- */
 console.log("4) Moteur d'audit (audit-engine.js)");
@@ -173,12 +171,6 @@ const checksOmnibus = [
   ["index.html", "nudifier"],
   ["index.html", "blog-digital-omnibus.html"],
   ["blog-digital-omnibus.html", "2026/1744"],
-  ["pack/guide-conformite-art50.html", "Digital Omnibus"],
-  ["pack/guide-conformite-art50.html", "02/12/2026"],
-  ["pack/guide-conformite-art50.html", "35"],
-  ["pack/checklist-4-situations.html", "Digital Omnibus"],
-  ["pack/modeles-mentions.html", "2026/1744"],
-  ["pack/procedure-interne.html", "2026/1744"]
 ];
 checksOmnibus.forEach(([f, needle]) => {
   const html = fs.readFileSync(path.join(ROOT, f), "utf8");

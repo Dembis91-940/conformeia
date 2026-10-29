@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Commander le Pack Art. 50 Express — ConformeIA</title>
-<meta name="description" content="Commandez le pack de conformité à l'article 50 de l'EU AI Act : Pack Express 49 €, Pack Pro 149 €, Conformité complète à partir de 290 €. Livraison par email sous 24 h.">
+<meta name="description" content="Commandez le pack de conformité à l'article 50 de l'EU AI Act : Pack Express 49 €, Pack Adapté 149 €, Pack Adapté + 1 h de relecture 290 €. Livraison par email sous 24 h.">
 <meta property="og:locale" content="fr_FR">
 <style>
   :root{
@@ -107,10 +107,10 @@
   "use strict";
   var T = window.CONFORMEIA_TARIFS;
   if (!T) return;
-  var ids = ["pack49", "pack149", "service"];
+  var ids = ["pack49", "pack149", "pack290"];
   var selected = "pack149";
   /* Payment Links Stripe réels (live) */
-  var STRIPE = { pack49: "https://buy.stripe.com/4gM6oJ9b05TTaDrdGsfrW0k", pack149: "https://buy.stripe.com/fZuaEZevkdmlcLzbykfrW0l", service: "https://buy.stripe.com/dRmaEZaf4gyxfXLeKwfrW0m" };
+  var STRIPE = { pack49: "https://buy.stripe.com/4gM6oJ9b05TTaDrdGsfrW0k", pack149: "https://buy.stripe.com/fZuaEZevkdmlcLzbykfrW0l", pack290: "https://buy.stripe.com/dRmaEZaf4gyxfXLeKwfrW0m" };
 
   function labelPrix(id) {
     var p = T.PACKS[id];
@@ -121,7 +121,7 @@
   var cards = document.getElementById("cards");
   ids.forEach(function (id) {
     var p = T.PACKS[id];
-    var badgeHtml = p.badge ? '<span class="badge' + (p.badge === "SERVICE" ? " service" : "") + '">' + p.badge + "</span>" : "";
+    var badgeHtml = p.badge ? '<span class="badge' + (p.badge === "AVEC MOI" ? " service" : "") + '">' + p.badge + "</span>" : "";
     var prixHtml = p.aPartirDe
       ? '<small>à partir de</small> ' + T.formatPrix(p.prix)
       : T.formatPrix(p.prix) + " <small>TTC</small>";
@@ -143,7 +143,7 @@
     document.getElementById("selPrix").textContent = labelPrix(id);
     document.getElementById("selTotal").textContent = labelPrix(id);
     document.getElementById("payBtn").href = STRIPE[id];
-    var hash = id === "pack49" ? "pack49" : (id === "pack149" ? "pack149" : "service");
+    var hash = id === "pack49" ? "pack49" : (id === "pack149" ? "pack149" : "pack290");
     history.replaceState(null, "", "#" + hash);
   }
 

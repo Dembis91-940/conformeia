@@ -1,3 +1,8 @@
 
 # Livrables payants — hors dépôt public (livraison par email)
 zip/
+
+# Contenu des niveaux 149 € et 290 € — livré après paiement, jamais publié.
+# Un .md poussé ici devient lisible par n'importe qui : ces 6 documents SONT
+# la valeur vendue. Ils restent sur le poste et partent par email.
+pack/niveaux/
