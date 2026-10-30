@@ -23,7 +23,7 @@ ai-act-conformite/
 │   ├── audit-engine.js     Moteur d'audit pur (testé en Node)
 │   └── chatbot.js          Widget FAQ + capture de lead (EmailJS)
 ├── pack/                   CONTENU LIVRÉ AU CLIENT (A4 imprimable)
-│   ├── guide-conformite-art50.html   Guide ≈ 40 p. (+ .md)
+│   ├── guide-conformite-art50.html   Guide 9 p. A4 (+ .md)
 │   ├── checklist-4-situations.html   Checklist cochable, responsable + délai
 │   ├── modeles-mentions.html         Mentions prêtes à copier (chatbot, voix,
 │   │                                 deepfakes, textes, marquage machine)

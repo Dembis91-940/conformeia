@@ -6,3 +6,7 @@ zip/
 # Un .md poussé ici devient lisible par n'importe qui : ces 6 documents SONT
 # la valeur vendue. Ils restent sur le poste et partent par email.
 pack/niveaux/
+
+# Documents juridiques — rédigés mais NON publiés tant que le SIRET n'est pas attribué.
+# Contient aussi les liens de paiement Stripe retirés du site le 30/10/2026.
+juridique/

@@ -73,11 +73,15 @@ const tarifs = fs.readFileSync(path.join(ROOT, "js/tarifs.js"), "utf8");
     checks.push(["49 €", /49[^\d]|"49"/], ["149 €", /149[^\d]|"149"/],
       ["290 €", /290[^\d]|"290"/]);
   } else {
-    /* paiement.html rend les prix DEPUIS la source unique (tarifs.js) :
-       vérifier l'usage de T.PACKS, du champ aPartirDe et des liens Stripe */
+    /* paiement.html rend les prix DEPUIS la source unique (tarifs.js).
+       Depuis le 30/10/2026 les commandes sont FERMÉES (SIRET en cours) : les
+       Payment Links doivent avoir disparu du code public et le message
+       « Ouverture des commandes très bientôt » doit être affiché.
+       Le QA vérifie donc l'inverse de ce qu'il vérifiait avant. */
     checks.push(
       ["utilise T.PACKS", /T\.PACKS/],
-      ["liens Stripe directs", /buy\.stripe\.com/],
+      ["aucun Payment Link public", /^(?![\s\S]*buy\.stripe\.com)[\s\S]*$/],
+      ["message commandes fermées", /Ouverture des commandes très bientôt/],
       ["utilise formatPrix", /formatPrix/]
     );
   }

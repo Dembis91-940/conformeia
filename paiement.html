@@ -72,7 +72,7 @@
 <main>
   <span class="kicker">Commande</span>
   <h1 class="serif">Choisissez votre niveau de conformité.</h1>
-  <p class="intro">Livraison par email sous 24 h ouvrées. Mises à jour réglementaires incluses 12 mois. Garantie 14 jours « conforme documentairement ou remboursé ».</p>
+  <p class="intro">Livraison par email sous 24 h ouvrées. Mises à jour réglementaires incluses 12 mois. TVA non applicable, art. 293 B du CGI.</p>
 
 
   <div class="cards" id="cards"></div>
@@ -91,8 +91,8 @@
       </div>
       <div class="fgroup"><label>Message (optionnel)</label><input id="o-msg" placeholder="Votre situation IA en 2 lignes…"></div>
       <div class="total"><span>Total</span><span class="sum" id="selTotal">—</span></div>
-      <a class="btn btn-primary" id="payBtn" href="https://buy.stripe.com/fZuaEZevkdmlcLzbykfrW0l" rel="noopener">Payer par carte — paiement sécurisé Stripe →</a>
-      <p class="stripe-note">🔒 Paiement immédiat par carte sur la page sécurisée Stripe. Les champs ci-dessus sont facultatifs (facturation au nom de votre entreprise) ; l'email de livraison est demandé par Stripe.</p>
+      <div class="btn btn-primary" id="payBtn" style="display:block;text-align:center;cursor:default;opacity:.85">Ouverture des commandes très bientôt</div>
+      <p class="stripe-note">Les commandes n'ouvrent pas encore : notre immatriculation est en cours. Laissez-nous votre email ci-dessus et vous serez prévenu en premier.</p>
       <p class="stripe-note">ConformeIA est un outil d'aide à la mise en conformité : il ne remplace pas un conseil juridique.</p>
       <p class="rgpd">Vos données servent uniquement à traiter votre commande et à vous livrer le pack. Conservées 12 mois, jamais revendues. Conforme RGPD.</p>
     </form>
@@ -109,8 +109,10 @@
   if (!T) return;
   var ids = ["pack49", "pack149", "pack290"];
   var selected = "pack149";
-  /* Payment Links Stripe réels (live) */
-  var STRIPE = { pack49: "https://buy.stripe.com/4gM6oJ9b05TTaDrdGsfrW0k", pack149: "https://buy.stripe.com/fZuaEZevkdmlcLzbykfrW0l", pack290: "https://buy.stripe.com/dRmaEZaf4gyxfXLeKwfrW0m" };
+  /* Payment Links Stripe réels (live) — RETIRÉS DU CODE PUBLIC le 30/10/2026.
+     Commandes fermées jusqu'à l'attribution du SIRET. Les URL sont conservées
+     dans juridique/liens-stripe.txt (non publié) pour la réouverture. */
+  var STRIPE = {};
 
   function labelPrix(id) {
     var p = T.PACKS[id];
@@ -130,7 +132,8 @@
     div.className = "card" + (id === selected ? " sel" : "");
     div.id = "c-" + id;
     div.innerHTML = badgeHtml + "<h3>" + p.nom + "</h3><div class='price'>" + prixHtml + "</div><div class='sub'>" + p.cible + "</div><ul>" + items + "</ul>" +
-      '<a class="btn btn-primary" href="' + STRIPE[id] + '" rel="noopener" style="margin-top:8px">Payer ' + T.formatPrix(p.prix) + ' — Stripe →</a>';
+      '<div class="btn btn-ghost" style="margin-top:8px;cursor:default;text-align:center;opacity:.75">' +
+      (p.disponibilite === "sur_demande" ? "Sur demande — nous contacter" : "Ouverture des commandes très bientôt") + '</div>';
     div.addEventListener("click", function () { select(id); });
     cards.appendChild(div);
   });
@@ -142,7 +145,7 @@
     document.getElementById("selLabel").textContent = p.nom;
     document.getElementById("selPrix").textContent = labelPrix(id);
     document.getElementById("selTotal").textContent = labelPrix(id);
-    document.getElementById("payBtn").href = STRIPE[id];
+    /* Le lien de paiement n'est plus posé : les commandes sont fermées. */
     var hash = id === "pack49" ? "pack49" : (id === "pack149" ? "pack149" : "pack290");
     history.replaceState(null, "", "#" + hash);
   }
@@ -160,7 +163,8 @@
 
   document.getElementById("orderForm").addEventListener("submit", function (ev) {
     ev.preventDefault();
-    window.location.href = STRIPE[selected];
+    /* Commandes fermées : plus aucune redirection vers Stripe. */
+    alert("Les commandes n'ouvrent pas encore : notre immatriculation est en cours. Laissez-nous votre email, vous serez prévenu en premier.");
   });
 
   document.getElementById("payBtn").addEventListener("click", function () {
